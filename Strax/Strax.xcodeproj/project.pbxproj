@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DFE34D421BB3362F00096025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D411BB3362F00096025 /* AppDelegate.swift */; };
+		DFE34D441BB3362F00096025 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D431BB3362F00096025 /* ViewController.swift */; };
+		DFE34D471BB3362F00096025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE34D451BB3362F00096025 /* Main.storyboard */; };
+		DFE34D4A1BB3362F00096025 /* Strax.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D481BB3362F00096025 /* Strax.xcdatamodeld */; };
+		DFE34D4C1BB3362F00096025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE34D4B1BB3362F00096025 /* Assets.xcassets */; };
+		DFE34D4F1BB3362F00096025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE34D4D1BB3362F00096025 /* LaunchScreen.storyboard */; };
+		DFE34D5A1BB3362F00096025 /* StraxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D591BB3362F00096025 /* StraxTests.swift */; };
+		DFE34D651BB3362F00096025 /* StraxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D641BB3362F00096025 /* StraxUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFE34D561BB3362F00096025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFE34D361BB3362F00096025 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFE34D3D1BB3362F00096025;
+			remoteInfo = Strax;
+		};
+		DFE34D611BB3362F00096025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFE34D361BB3362F00096025 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFE34D3D1BB3362F00096025;
+			remoteInfo = Strax;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DFE34D3E1BB3362F00096025 /* Strax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Strax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE34D411BB3362F00096025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DFE34D431BB3362F00096025 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFE34D461BB3362F00096025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DFE34D491BB3362F00096025 /* Strax.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Strax.xcdatamodel; sourceTree = "<group>"; };
+		DFE34D4B1BB3362F00096025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFE34D4E1BB3362F00096025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DFE34D501BB3362F00096025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFE34D551BB3362F00096025 /* StraxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StraxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE34D591BB3362F00096025 /* StraxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraxTests.swift; sourceTree = "<group>"; };
+		DFE34D5B1BB3362F00096025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFE34D601BB3362F00096025 /* StraxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StraxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE34D641BB3362F00096025 /* StraxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraxUITests.swift; sourceTree = "<group>"; };
+		DFE34D661BB3362F00096025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFE34D3B1BB3362F00096025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE34D521BB3362F00096025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE34D5D1BB3362F00096025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DFE34D351BB3362F00096025 = {
+			isa = PBXGroup;
+			children = (
+				DFE34D401BB3362F00096025 /* Strax */,
+				DFE34D581BB3362F00096025 /* StraxTests */,
+				DFE34D631BB3362F00096025 /* StraxUITests */,
+				DFE34D3F1BB3362F00096025 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DFE34D3F1BB3362F00096025 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFE34D3E1BB3362F00096025 /* Strax.app */,
+				DFE34D551BB3362F00096025 /* StraxTests.xctest */,
+				DFE34D601BB3362F00096025 /* StraxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFE34D401BB3362F00096025 /* Strax */ = {
+			isa = PBXGroup;
+			children = (
+				DFE34D411BB3362F00096025 /* AppDelegate.swift */,
+				DFE34D431BB3362F00096025 /* ViewController.swift */,
+				DFE34D451BB3362F00096025 /* Main.storyboard */,
+				DFE34D4B1BB3362F00096025 /* Assets.xcassets */,
+				DFE34D4D1BB3362F00096025 /* LaunchScreen.storyboard */,
+				DFE34D501BB3362F00096025 /* Info.plist */,
+				DFE34D481BB3362F00096025 /* Strax.xcdatamodeld */,
+			);
+			path = Strax;
+			sourceTree = "<group>";
+		};
+		DFE34D581BB3362F00096025 /* StraxTests */ = {
+			isa = PBXGroup;
+			children = (
+				DFE34D591BB3362F00096025 /* StraxTests.swift */,
+				DFE34D5B1BB3362F00096025 /* Info.plist */,
+			);
+			path = StraxTests;
+			sourceTree = "<group>";
+		};
+		DFE34D631BB3362F00096025 /* StraxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DFE34D641BB3362F00096025 /* StraxUITests.swift */,
+				DFE34D661BB3362F00096025 /* Info.plist */,
+			);
+			path = StraxUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DFE34D3D1BB3362F00096025 /* Strax */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFE34D691BB3362F00096025 /* Build configuration list for PBXNativeTarget "Strax" */;
+			buildPhases = (
+				DFE34D3A1BB3362F00096025 /* Sources */,
+				DFE34D3B1BB3362F00096025 /* Frameworks */,
+				DFE34D3C1BB3362F00096025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Strax;
+			productName = Strax;
+			productReference = DFE34D3E1BB3362F00096025 /* Strax.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DFE34D541BB3362F00096025 /* StraxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFE34D6C1BB3362F00096025 /* Build configuration list for PBXNativeTarget "StraxTests" */;
+			buildPhases = (
+				DFE34D511BB3362F00096025 /* Sources */,
+				DFE34D521BB3362F00096025 /* Frameworks */,
+				DFE34D531BB3362F00096025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFE34D571BB3362F00096025 /* PBXTargetDependency */,
+			);
+			name = StraxTests;
+			productName = StraxTests;
+			productReference = DFE34D551BB3362F00096025 /* StraxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DFE34D5F1BB3362F00096025 /* StraxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFE34D6F1BB3362F00096025 /* Build configuration list for PBXNativeTarget "StraxUITests" */;
+			buildPhases = (
+				DFE34D5C1BB3362F00096025 /* Sources */,
+				DFE34D5D1BB3362F00096025 /* Frameworks */,
+				DFE34D5E1BB3362F00096025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFE34D621BB3362F00096025 /* PBXTargetDependency */,
+			);
+			name = StraxUITests;
+			productName = StraxUITests;
+			productReference = DFE34D601BB3362F00096025 /* StraxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFE34D361BB3362F00096025 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = LemonandLime;
+				TargetAttributes = {
+					DFE34D3D1BB3362F00096025 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					DFE34D541BB3362F00096025 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = DFE34D3D1BB3362F00096025;
+					};
+					DFE34D5F1BB3362F00096025 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = DFE34D3D1BB3362F00096025;
+					};
+				};
+			};
+			buildConfigurationList = DFE34D391BB3362F00096025 /* Build configuration list for PBXProject "Strax" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DFE34D351BB3362F00096025;
+			productRefGroup = DFE34D3F1BB3362F00096025 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFE34D3D1BB3362F00096025 /* Strax */,
+				DFE34D541BB3362F00096025 /* StraxTests */,
+				DFE34D5F1BB3362F00096025 /* StraxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFE34D3C1BB3362F00096025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE34D4F1BB3362F00096025 /* LaunchScreen.storyboard in Resources */,
+				DFE34D4C1BB3362F00096025 /* Assets.xcassets in Resources */,
+				DFE34D471BB3362F00096025 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE34D531BB3362F00096025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE34D5E1BB3362F00096025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFE34D3A1BB3362F00096025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE34D4A1BB3362F00096025 /* Strax.xcdatamodeld in Sources */,
+				DFE34D441BB3362F00096025 /* ViewController.swift in Sources */,
+				DFE34D421BB3362F00096025 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE34D511BB3362F00096025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE34D5A1BB3362F00096025 /* StraxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFE34D5C1BB3362F00096025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE34D651BB3362F00096025 /* StraxUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DFE34D571BB3362F00096025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFE34D3D1BB3362F00096025 /* Strax */;
+			targetProxy = DFE34D561BB3362F00096025 /* PBXContainerItemProxy */;
+		};
+		DFE34D621BB3362F00096025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFE34D3D1BB3362F00096025 /* Strax */;
+			targetProxy = DFE34D611BB3362F00096025 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DFE34D451BB3362F00096025 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFE34D461BB3362F00096025 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DFE34D4D1BB3362F00096025 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFE34D4E1BB3362F00096025 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DFE34D671BB3362F00096025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFE34D681BB3362F00096025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DFE34D6A1BB3362F00096025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Strax/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.Strax;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DFE34D6B1BB3362F00096025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Strax/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.Strax;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DFE34D6D1BB3362F00096025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StraxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Strax.app/Strax";
+			};
+			name = Debug;
+		};
+		DFE34D6E1BB3362F00096025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StraxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Strax.app/Strax";
+			};
+			name = Release;
+		};
+		DFE34D701BB3362F00096025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StraxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Strax;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DFE34D711BB3362F00096025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StraxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Strax;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFE34D391BB3362F00096025 /* Build configuration list for PBXProject "Strax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE34D671BB3362F00096025 /* Debug */,
+				DFE34D681BB3362F00096025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFE34D691BB3362F00096025 /* Build configuration list for PBXNativeTarget "Strax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE34D6A1BB3362F00096025 /* Debug */,
+				DFE34D6B1BB3362F00096025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DFE34D6C1BB3362F00096025 /* Build configuration list for PBXNativeTarget "StraxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE34D6D1BB3362F00096025 /* Debug */,
+				DFE34D6E1BB3362F00096025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DFE34D6F1BB3362F00096025 /* Build configuration list for PBXNativeTarget "StraxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFE34D701BB3362F00096025 /* Debug */,
+				DFE34D711BB3362F00096025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DFE34D481BB3362F00096025 /* Strax.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFE34D491BB3362F00096025 /* Strax.xcdatamodel */,
+			);
+			currentVersion = DFE34D491BB3362F00096025 /* Strax.xcdatamodel */;
+			path = Strax.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DFE34D361BB3362F00096025 /* Project object */;
+}
