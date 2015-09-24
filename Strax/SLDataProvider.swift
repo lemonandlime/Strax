@@ -33,7 +33,7 @@ class SLDataProvider: NSObject {
     
     func getTrip(from:String, to: String, onCompletion: (Result<Array<Trip>, NSError>) -> Void) {
         let parameters = ["key":key, "originId":from, "destId":to]
-        Alamofire.request(.GET, NSURL(string: "http://api.sl.se/api2/TravelplannerV2/trip.JSON")!, parameters: parameters, encoding: .JSON, headers: nil).responseData { (response) -> Void in
+        Alamofire.request(.GET, NSURL(string: "http://api.sl.se/api2/TravelplannerV2/trip.JSON")!, parameters: parameters, encoding: .URL, headers: nil).responseData { (response) -> Void in
 
             
             switch response.result {
@@ -56,7 +56,7 @@ class SLDataProvider: NSObject {
     func getLocation(name:String, onCompletion: (Result<AnyObject, NSError>) ->Void){
         let parameters = ["key":nameKey, "searchstring":name]
         
-        Alamofire.request(.GET, NSURL(string: "http://api.sl.se/api2/typeahead.JSON")!, parameters: parameters, encoding: .JSON, headers: parameters).responseData { (response) -> Void in
+        Alamofire.request(.GET, NSURL(string: "http://api.sl.se/api2/typeahead.JSON")!, parameters: parameters, encoding: .URL, headers: nil).responseData { (response) -> Void in
             
             switch response.result{
             case .Success(let object):
