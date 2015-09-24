@@ -55,15 +55,12 @@ class LocationView: MKAnnotationView {
             
         case .Changed :
             didChangeMoveClosure!(self.center, point)
-            //self.transform =  CGAffineTransformMakeTranslation(point.x-startDragPoint.x, point.y-startDragPoint.y)
             return
             
         default:
             return
         }
-        
-//        let point = gesturecognizer.locationInView(self.superview)
-//        self.center = point
+
     }
     
 

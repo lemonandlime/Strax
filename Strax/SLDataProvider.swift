@@ -13,29 +13,27 @@ import Alamofire
 
 
 private let _sharedInstance = SLDataProvider()
-private let baseUrl = NSURL(string: "http://api.sl.se/api2")!
+private let baseUrl = "http://api.sl.se/api2/"
 private let key = "35ea4763c2cc4c47b9aaef634b728943"
 private let nameKey = "814ca053c1774eedaf6cfd61e2c7e886"
 class SLDataProvider: NSObject {
     
-    //private let manager : AFHTTPRequestOperationManager = AFHTTPRequestOperationManager(baseURL: baseUrl)
-
     
     class var sharedInstance : SLDataProvider {
         return _sharedInstance
     }
     
-    override init(){
-        //manager.responseSerializer = AFJSONResponseSerializer()
-        super.init()
-        
-    }
-    
     func getTrip(from:String, to: String, onCompletion: (Result<Array<Trip>, NSError>) -> Void) {
         let parameters = ["key":key, "originId":from, "destId":to]
-        Alamofire.request(.GET, NSURL(string: "http://api.sl.se/api2/TravelplannerV2/trip.JSON")!, parameters: parameters, encoding: .URL, headers: nil).responseData { (response) -> Void in
+        
+        Alamofire.request(
+            .GET,
+            NSURL(string: baseUrl+"TravelplannerV2/trip.JSON")!,
+            parameters: parameters,
+            encoding: .URL,
+            headers: nil)
+            .responseData { (response) -> Void in
 
-            
             switch response.result {
             case .Success(let object):
                 let json = JSON(data: object)
@@ -56,7 +54,13 @@ class SLDataProvider: NSObject {
     func getLocation(name:String, onCompletion: (Result<AnyObject, NSError>) ->Void){
         let parameters = ["key":nameKey, "searchstring":name]
         
-        Alamofire.request(.GET, NSURL(string: "http://api.sl.se/api2/typeahead.JSON")!, parameters: parameters, encoding: .URL, headers: nil).responseData { (response) -> Void in
+        Alamofire.request(
+            .GET,
+            NSURL(string: baseUrl+"typeahead.JSON")!,
+            parameters: parameters,
+            encoding: .URL,
+            headers: nil)
+            .responseData { (response) -> Void in
             
             switch response.result{
             case .Success(let object):

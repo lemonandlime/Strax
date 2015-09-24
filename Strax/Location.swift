@@ -27,9 +27,9 @@ class Location: NSManagedObject, BaseLocation {
     @NSManaged var lat: NSNumber
     
     func setLocationInfo(info:NSDictionary){
-        name = info[key.name.rawValue] as! String
-        id = info[key.id.rawValue] as! String
-        type = info[key.type.rawValue] as! String
+        name = info["Name"] as! String
+        id = info["SiteId"] as! String
+        type = info["Type"] as! String
         
         var xValue = info[key.lat.rawValue] as! String
         xValue.insert(".", atIndex: xValue.startIndex.advancedBy(2))
