@@ -23,11 +23,6 @@ class SLDataProvider: NSObject {
         return _sharedInstance
     }
     
-    override init(){
-        super.init()
-        
-    }
-    
     func getTrip(from:String, to: String, onCompletion: (Result<Array<Trip>, NSError>) -> Void) {
         let parameters = ["key":key, "originId":from, "destId":to]
         
