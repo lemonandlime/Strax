@@ -53,6 +53,7 @@
 		30AAD860676A5237E40FD2DB /* Pods_Strax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDC09F7DFB796B10FDEB64F /* Pods-StraxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StraxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StraxTests/Pods-StraxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4548EAB21BB49D7000A15921 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		4548EAB41BB4B1F500A15921 /* Strax-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Strax-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		661131920A3FA9FF550B9B0B /* Pods_StraxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StraxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E76F9863EB319C676759C70 /* Pods-StraxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StraxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StraxUITests/Pods-StraxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A3B76DAF4CC0246BDACF51B9 /* Pods-Strax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strax.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Strax/Pods-Strax.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 				DFA6A7CB1BB340950052F7D7 /* Main.storyboard */,
 				DFE34D501BB3362F00096025 /* Info.plist */,
 				DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */,
+				4548EAB41BB4B1F500A15921 /* Strax-Bridging-Header.h */,
 			);
 			path = Strax;
 			sourceTree = "<group>";
@@ -303,6 +305,7 @@
 		DFE34D361BB3362F00096025 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = LemonandLime;
 				TargetAttributes = {
@@ -632,11 +635,14 @@
 			baseConfigurationReference = A3B76DAF4CC0246BDACF51B9 /* Pods-Strax.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Strax/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.Strax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Strax-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -645,11 +651,13 @@
 			baseConfigurationReference = A3C18C23F0381033B07DDCDE /* Pods-Strax.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Strax/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.Strax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Strax-Bridging-Header.h";
 			};
 			name = Release;
 		};

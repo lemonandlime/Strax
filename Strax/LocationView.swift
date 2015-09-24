@@ -17,6 +17,11 @@ class LocationView: MKAnnotationView {
         return view
     }
     
+    class func locationView()->LocationView{
+        let view : LocationView =  NSBundle.mainBundle().loadNibNamed("LocationView", owner: self, options: nil).first as! LocationView
+        return view
+    }
+    
     @IBOutlet var titleLabel : UILabel!
     @IBOutlet var pointImage : UIImageView!
     let gesturecognizer : UIPanGestureRecognizer = UIPanGestureRecognizer()
