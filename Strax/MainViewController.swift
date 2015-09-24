@@ -17,10 +17,8 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.userInteractionEnabled = true
         mapView.delegate = self
         locations = DBManager.sharedInstance.allLocations()
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -95,15 +93,9 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func findTravel(fromPoint:CGPoint, toPoint:CGPoint, successClosure:(travel: Dictionary<String, AnyObject>)->Void){
-        let optFromLocation = locationForPoint(fromPoint)
-        let optToLocation = locationForPoint(toPoint)
+        guard let from = locationForPoint(fromPoint), let to = locationForPoint(toPoint) else {return}
         
-        guard let fromLocation = optFromLocation, let toLocation = optToLocation
-            where optFromLocation != nil && optToLocation != nil else{
-                return
-        }
-        
-        SLDataProvider.sharedInstance.getTrip(fromLocation.id, to: toLocation.id) { (result) -> Void in
+        SLDataProvider.sharedInstance.getTrip(from.id, to: to.id) { (result) -> Void in
             switch result {
             case .Success(let trips):
                 print(NSString(format: "Found and parsed %d trips", trips.count));
@@ -128,30 +120,5 @@ class MainViewController: UIViewController, MKMapViewDelegate {
             .first as? Annotation)?
             .location
     }
-    
-    private func locationForName(name:String)->Location?{
-        let filteredLocations = locations.filter({ (location) in
-            location.name == name
-        })
-        
-        return filteredLocations.first
-    }
-    
-    
-    
-    //    @IBAction func search(sender: UITextField) {
-    //        SLDataProvider.sharedInstance.getLocation(sender.text!) { (result) -> Void in
-    //            switch result{
-    //            case .Success(let location):
-    //                let aLocation = DBManager.sharedInstance.newLocation()
-    //                aLocation.setLocationInfo(location as! NSDictionary)
-    //                self.addAnnotation(aLocation)
-    //
-    //            case .Failure(let error):
-    //                print(error)
-    //            }
-    //        }
-    //
-    //    }
 }
 
