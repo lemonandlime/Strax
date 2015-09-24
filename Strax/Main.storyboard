@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xs9-IX-KKz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xs9-IX-KKz">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Add Location View Controller-->
         <scene sceneID="Kpb-OB-FCh">
             <objects>
-                <viewController id="xs9-IX-KKz" customClass="AddLocationViewController" customModule="CitronResan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xs9-IX-KKz" customClass="AddLocationViewController" customModule="Strax" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hn7-U4-Q8s"/>
                         <viewControllerLayoutGuide type="bottom" id="Ehp-26-NVn"/>
@@ -80,7 +79,7 @@
         <!--Main View Controller-->
         <scene sceneID="55H-AC-vfn">
             <objects>
-                <viewController id="kDE-qU-LM4" customClass="MainViewController" customModule="CitronResan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kDE-qU-LM4" customClass="MainViewController" customModule="Strax" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oe6-Vi-65Y"/>
                         <viewControllerLayoutGuide type="bottom" id="dtM-oI-poj"/>
@@ -121,7 +120,7 @@
         <!--Show Trip View Controller-->
         <scene sceneID="wnh-pe-OIS">
             <objects>
-                <viewController id="27j-sJ-Ahf" customClass="ShowTripViewController" customModule="CitronResan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="27j-sJ-Ahf" customClass="ShowTripViewController" customModule="Strax" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BkI-M6-aQZ"/>
                         <viewControllerLayoutGuide type="bottom" id="WLD-dy-Pli"/>

@@ -23,54 +23,47 @@ class MainViewController: UIViewController, MKMapViewDelegate {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        var annotations : [MKPointAnnotation] = []
-        for location in locations{
-            let point = MKPointAnnotation()
-            point.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(location.lon), CLLocationDegrees(location.lat))
-            point.title = location.name
-            annotations.append(point)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let annotations = locations.map { (location) -> Annotation in
+            let annotation = Annotation()
+            annotation.location = location
+            return annotation
         }
         
-        mapView.showAnnotations(annotations, animated: true)
-        
+        mapView.showAnnotations(annotations, animated: false)
     }
     
-    func addAnnotation(location:Location){
-        let point = MKPointAnnotation()
-        
-        point.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(location.lon), CLLocationDegrees(location.lat))
-        mapView.addAnnotation(point)
-        mapView.showAnnotations(mapView.annotations, animated: true)
-        
-    }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
-        if let currentLocation = locationForName((annotation.title!)!){
-            let currentLocationView =  LocationView.locationView(currentLocation)
-            
-            currentLocationView.didBeginMoveClosure = {(fromPoint, view) in
-                self.lineView?.removeFromSuperview()
-                self.lineView = LineView(frame: self.view.frame)
-                self.view.addSubview(self.lineView!)
-                self.view.bringSubviewToFront(view)
-                //self.lineView?.updateLine(fromPoint, toPoint: toPoint)
-            }
-            currentLocationView.didChangeMoveClosure = {(fromPoint, toPoint) in
-                self.lineView?.updateLine(fromPoint, toPoint: toPoint)
-                self.highlightViewsContainingPoint(toPoint)
-            }
-            currentLocationView.didEndMoveClosure = {(fromPoint, toPoint) in
-                self.lineView?.removeFromSuperview()
-                self.lineView = nil
-                self.findTravel(fromPoint, toPoint: toPoint, successClosure: { (travel) -> Void in
-                    return
-                })
-            }
-            return currentLocationView
+        
+        guard let location = (annotation as? Annotation)?.location else{
+            assertionFailure("Annotation must contain location object")
+            return nil
         }
-        return nil
+        let view =  LocationView.locationView(location)
+        
+        view.didBeginMoveClosure = {(fromPoint, view) in
+            self.lineView?.removeFromSuperview()
+            self.lineView = LineView(frame: self.view.frame)
+            self.view.addSubview(self.lineView!)
+            self.view.bringSubviewToFront(view)
+        }
+        view.didChangeMoveClosure = {(fromPoint, toPoint) in
+            self.lineView?.updateLine(fromPoint, toPoint: toPoint)
+            self.highlightViewsContainingPoint(toPoint)
+        }
+        view.didEndMoveClosure = {(fromPoint, toPoint) in
+            self.lineView?.removeFromSuperview()
+            self.lineView = nil
+            self.findTravel(fromPoint, toPoint: toPoint, successClosure: { (travel) -> Void in
+                return
+            })
+        }
+        
+        return view
+
     }
     
     
@@ -130,18 +123,10 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func locationForPoint(point:CGPoint)->Location?{
-        let subViews = self.view.subviews.filter
-            { (T) -> Bool in
-                return T is LocationView && CGRectContainsPoint(T.frame, point)
-        }
-        let name = (subViews.first as? LocationView)?.titleLabel.text
-        
-        for location in self.locations{
-            if location.name == name {
-                return location
-            }
-        }
-        return nil
+        return (mapView.annotations
+            .filter{CGRectContainsPoint((mapView.viewForAnnotation($0)?.frame)!, point)}
+            .first as? Annotation)?
+            .location
     }
     
     private func locationForName(name:String)->Location?{
@@ -154,19 +139,19 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     
     
     
-    @IBAction func search(sender: UITextField) {
-        SLDataProvider.sharedInstance.getLocation(sender.text!) { (result) -> Void in
-            switch result{
-            case .Success(let location):
-                let aLocation = DBManager.sharedInstance.newLocation()
-                aLocation.setLocationInfo(location as! NSDictionary)
-                self.addAnnotation(aLocation)
-                
-            case .Failure(let error):
-                print(error)
-            }
-        }
-        
-    }
+    //    @IBAction func search(sender: UITextField) {
+    //        SLDataProvider.sharedInstance.getLocation(sender.text!) { (result) -> Void in
+    //            switch result{
+    //            case .Success(let location):
+    //                let aLocation = DBManager.sharedInstance.newLocation()
+    //                aLocation.setLocationInfo(location as! NSDictionary)
+    //                self.addAnnotation(aLocation)
+    //
+    //            case .Failure(let error):
+    //                print(error)
+    //            }
+    //        }
+    //
+    //    }
 }
 
