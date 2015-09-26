@@ -19,9 +19,9 @@
 		DFA6A7CD1BB340950052F7D7 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DFA6A7CE1BB340950052F7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7CB1BB340950052F7D7 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		DFA6A7D01BB340A10052F7D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
-		DFA6A7D51BB340C90052F7D7 /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7D11BB340C80052F7D7 /* LocationView.xib */; settings = {ASSET_TAGS = (); }; };
+		DFA6A7D51BB340C90052F7D7 /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7D11BB340C80052F7D7 /* AnnotationView.xib */; settings = {ASSET_TAGS = (); }; };
 		DFA6A7D61BB340C90052F7D7 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D21BB340C90052F7D7 /* LineView.swift */; settings = {ASSET_TAGS = (); }; };
-		DFA6A7D71BB340C90052F7D7 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D31BB340C90052F7D7 /* LocationView.swift */; settings = {ASSET_TAGS = (); }; };
+		DFA6A7D71BB340C90052F7D7 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */; settings = {ASSET_TAGS = (); }; };
 		DFA6A7D81BB340C90052F7D7 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */; settings = {ASSET_TAGS = (); }; };
 		DFE34D421BB3362F00096025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D411BB3362F00096025 /* AppDelegate.swift */; };
 		DFE34D4A1BB3362F00096025 /* Strax.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D481BB3362F00096025 /* Strax.xcdatamodeld */; };
@@ -69,9 +69,9 @@
 		DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		DFA6A7CB1BB340950052F7D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		DFA6A7D11BB340C80052F7D7 /* LocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
+		DFA6A7D11BB340C80052F7D7 /* AnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationView.xib; sourceTree = "<group>"; };
 		DFA6A7D21BB340C90052F7D7 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
-		DFA6A7D31BB340C90052F7D7 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		DFE34D3E1BB3362F00096025 /* Strax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Strax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE34D411BB3362F00096025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,9 +149,9 @@
 		DFA6A7D91BB340CE0052F7D7 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				DFA6A7D11BB340C80052F7D7 /* LocationView.xib */,
+				DFA6A7D11BB340C80052F7D7 /* AnnotationView.xib */,
 				DFA6A7D21BB340C90052F7D7 /* LineView.swift */,
-				DFA6A7D31BB340C90052F7D7 /* LocationView.swift */,
+				DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */,
 				DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */,
 				4548EAB21BB49D7000A15921 /* Annotation.swift */,
 			);
@@ -349,7 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE34D4C1BB3362F00096025 /* Assets.xcassets in Resources */,
-				DFA6A7D51BB340C90052F7D7 /* LocationView.xib in Resources */,
+				DFA6A7D51BB340C90052F7D7 /* AnnotationView.xib in Resources */,
 				DFA6A7D01BB340A10052F7D7 /* LaunchScreen.xib in Resources */,
 				DFA6A7CE1BB340950052F7D7 /* Main.storyboard in Resources */,
 			);
@@ -500,7 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA6A7C11BB340500052F7D7 /* DBManager.swift in Sources */,
-				DFA6A7D71BB340C90052F7D7 /* LocationView.swift in Sources */,
+				DFA6A7D71BB340C90052F7D7 /* AnnotationView.swift in Sources */,
 				DFE34D4A1BB3362F00096025 /* Strax.xcdatamodeld in Sources */,
 				DFA6A7BD1BB340300052F7D7 /* SLDataProvider.swift in Sources */,
 				4548EAB31BB49D7000A15921 /* Annotation.swift in Sources */,
