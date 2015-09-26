@@ -47,7 +47,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Point" width="66" height="66"/>
+        <image name="Point" width="50" height="50"/>
         <image name="Point Selected" width="66" height="66"/>
     </resources>
 </document>
