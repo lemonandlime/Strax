@@ -53,6 +53,7 @@ class MainViewController: UIViewController, MKMapViewDelegate {
             view.didEndMoveClosure = {(fromPoint, toPoint) in
                 self.lineView?.removeFromSuperview()
                 self.lineView = nil
+                self.unHighlightAllViews()
                 self.findTravel(fromPoint, toPoint: toPoint, successClosure: { (travel) -> Void in
                     return
                 })
@@ -78,30 +79,21 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     
     
     private func highlightViewsContainingPoint(point:CGPoint)->Array<AnnotationView>{
-        
         let subViews = self.mapView.annotations
-        
         let array : Array<AnnotationView> = Array()
         for annotation in  subViews{
             let object = mapView.viewForAnnotation(annotation)
             if let locationView = object as? AnnotationView{
-                if CGRectContainsPoint(locationView.frame, point){
-                    UIView.animateWithDuration(0.2, animations: { () -> Void in
-                        locationView.pointImage.highlighted = true
-                        locationView.transform = CGAffineTransformIdentity
-                    })
-                    
-                }else{
-                    UIView.animateWithDuration(0.2, animations: { () -> Void in
-                        locationView.pointImage.highlighted = false
-                        locationView.transform = CGAffineTransformMakeScale(0.5, 0.5)
-                    })
-                }
-                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    locationView.highlighted = CGRectContainsPoint(locationView.frame, point)
+                })
             }
-            
         }
         return array
+    }
+    
+    private func unHighlightAllViews(){
+        self.mapView.annotations.forEach {mapView.viewForAnnotation($0)?.highlighted = false}
     }
     
     private func findTravel(fromPoint:CGPoint, toPoint:CGPoint, successClosure:(travel: Dictionary<String, AnyObject>)->Void){

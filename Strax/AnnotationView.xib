@@ -16,7 +16,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="999" verticalHuggingPriority="999" image="Point" highlightedImage="Point Selected" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-ep-hwD">
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="999" verticalHuggingPriority="999" image="Point" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-ep-hwD">
                     <rect key="frame" x="0.0" y="0.0" width="66" height="71"/>
                 </imageView>
             </subviews>
@@ -48,6 +48,5 @@
     </objects>
     <resources>
         <image name="Point" width="50" height="50"/>
-        <image name="Point Selected" width="66" height="66"/>
     </resources>
 </document>

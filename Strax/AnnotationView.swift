@@ -25,8 +25,7 @@ class AnnotationView: MKAnnotationView {
     @IBOutlet var titleLabel : UILabel!
     @IBOutlet var pointImage : UIImageView!
     let gesturecognizer : UIPanGestureRecognizer = UIPanGestureRecognizer()
-    lazy var realCenter : CGPoint = self.pointImage.convertPoint(self.pointImage.center, toView: self.superview)
-    var startDragPoint : CGPoint = CGPointMake(0, 0)
+    var isTravelOrigin = false
     var didBeginMoveClosure:((CGPoint, UIView)->Void)?
     var didChangeMoveClosure:((CGPoint, CGPoint)->Void)?
     var didEndMoveClosure:((CGPoint, CGPoint)->Void)?
@@ -39,21 +38,42 @@ class AnnotationView: MKAnnotationView {
         self.addGestureRecognizer(gesturecognizer)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.titleLabel.hidden = true
+    }
+    
+    override var highlighted: Bool{
+        didSet{
+            switch highlighted{
+            case true:
+                self.titleLabel.hidden = false
+                pointImage.transform = CGAffineTransformMakeScale(1.2, 1.2)
+                break
+            case false:
+                if !isTravelOrigin{
+                    titleLabel.hidden = true
+                    pointImage.transform = CGAffineTransformIdentity
+                }
+                break
+            }
+        }
+    }
+    
     func didPan(gestureRecognizer : UIGestureRecognizer){
         let point = gesturecognizer.locationInView(superview)
         
         
         switch gesturecognizer.state{
         case .Began :
-            pointImage!.highlighted = true
-            
-            startDragPoint = gesturecognizer.locationInView(superview)
-            
+            highlighted = true
+            isTravelOrigin = true
             didBeginMoveClosure!(self.center, self)
             return
         case .Ended, .Cancelled :
-            pointImage!.highlighted = false
-            transform = CGAffineTransformIdentity
+            highlighted = false
+            isTravelOrigin = false
+            self.highlighted = false
             didEndMoveClosure!(self.center, point)
             return
 
