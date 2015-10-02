@@ -4,7 +4,7 @@ import UIKit
 import Darwin
 
 func getView()->UIView{
-    let view = UIView(frame: CGRectMake(0, 0, 30, 30))
+    let view = UIView(frame: CGRectMake(0, 0, 50, 50))
     view.backgroundColor = UIColor.greenColor()
     return view
 }
@@ -12,9 +12,9 @@ func getView()->UIView{
 func makeClusterButton(annotation: UIView){
     
     
-    let innerObjects = [getView(),getView(),getView()]
+    let innerObjects = [getView(),getView(), getView()]
     
-    let clusterSpread: Float = Float(M_PI / 5.0)
+    let clusterSpread: Float = Float(M_PI / 3.0)
     let clusterDistance: Float = 100
     
     //
@@ -28,20 +28,25 @@ func makeClusterButton(annotation: UIView){
     //
     
     innerObjects.enumerate().forEach { (index, view) -> () in
-        let y = clusterDistance * sinf(clusterSpread * Float(index));
-        let x = clusterDistance * cosf(clusterSpread * Float(index));
-        view.frame = CGRectOffset(view.frame, CGFloat(x), CGFloat(y))
+        let x = clusterDistance * sinf(clusterSpread * Float(index));
+        let y = -clusterDistance * cosf(clusterSpread * Float(index));
+        view.frame = CGRectApplyAffineTransform(view.frame, CGAffineTransformMakeTranslation(CGFloat(x), CGFloat(y)))
+        //view.center = CGPointMake(CGFloat(x + 25), CGFloat(y + 25))
+        //view.transform = CGAffineTransformMakeRotation(CGFloat(clusterSpread * Float(innerObjects.count / 2)))
         annotation.addSubview(view)
     }
+    
+    annotation.transform = CGAffineTransformMakeRotation(CGFloat(clusterSpread * Float(innerObjects.count / -2)))
     
 }
 
 let view  = UIView(frame: CGRectMake(0, 0, 1000, 1000))
 view.backgroundColor = UIColor.whiteColor()
 
-let annotation = UIView(frame: CGRectMake(500, 500, 30, 30))
+let annotation = UIView(frame: CGRectMake(500, 500, 50, 50))
 annotation.backgroundColor = UIColor.redColor()
 view.addSubview(annotation)
 makeClusterButton(annotation)
 
+view
 view
