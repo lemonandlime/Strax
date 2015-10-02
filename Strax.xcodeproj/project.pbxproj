@@ -54,6 +54,7 @@
 		3BDC09F7DFB796B10FDEB64F /* Pods-StraxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StraxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StraxTests/Pods-StraxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4548EAB21BB49D7000A15921 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		4548EAB41BB4B1F500A15921 /* Strax-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Strax-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		45F1433D1BBF15E4003ACB5A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		661131920A3FA9FF550B9B0B /* Pods_StraxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StraxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E76F9863EB319C676759C70 /* Pods-StraxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StraxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StraxUITests/Pods-StraxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A3B76DAF4CC0246BDACF51B9 /* Pods-Strax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strax.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Strax/Pods-Strax.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 		DFE34D351BB3362F00096025 = {
 			isa = PBXGroup;
 			children = (
+				45F1433D1BBF15E4003ACB5A /* MyPlayground.playground */,
 				DFE34D401BB3362F00096025 /* Strax */,
 				DFE34D581BB3362F00096025 /* StraxTests */,
 				DFE34D631BB3362F00096025 /* StraxUITests */,
