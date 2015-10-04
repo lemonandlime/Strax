@@ -2,59 +2,54 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" id="zy4-up-l6c" customClass="AnnotationClusterView" customModule="Strax" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="66" height="88"/>
+        <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="70" id="tNs-Li-KV9" customClass="AnnotationClusterView" customModule="Strax" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMn-kT-gm8">
-                    <rect key="frame" x="-17" y="-15" width="100" height="101"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0Q-Wm-3Il">
+                    <rect key="frame" x="-50" y="-50" width="150" height="150"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="nbV-wr-N63"/>
-                        <constraint firstAttribute="width" constant="100" id="ye2-XL-36U"/>
+                        <constraint firstAttribute="height" constant="150" id="S3p-1T-K9J"/>
+                        <constraint firstAttribute="width" constant="150" id="r9m-uY-wHx"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSj-W3-Uvm">
-                    <rect key="frame" x="15" y="71" width="36" height="17"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2g-fp-aN4">
+                    <rect key="frame" x="9" y="43" width="32" height="15"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="999" verticalHuggingPriority="999" image="Point" translatesAutoresizingMaskIntoConstraints="NO" id="5mn-o8-Q2x">
-                    <rect key="frame" x="0.0" y="0.0" width="66" height="71"/>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" horizontalHuggingPriority="999" verticalHuggingPriority="999" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="Point" translatesAutoresizingMaskIntoConstraints="NO" id="7uu-lu-fAy">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="DMn-kT-gm8" firstAttribute="centerY" secondItem="5mn-o8-Q2x" secondAttribute="centerY" id="1wq-jT-Ogb"/>
-                <constraint firstItem="5mn-o8-Q2x" firstAttribute="leading" secondItem="zy4-up-l6c" secondAttribute="leading" id="3R9-su-Ffc"/>
-                <constraint firstItem="DMn-kT-gm8" firstAttribute="centerX" secondItem="5mn-o8-Q2x" secondAttribute="centerX" id="7hv-gf-SDj"/>
-                <constraint firstAttribute="bottom" secondItem="XSj-W3-Uvm" secondAttribute="bottom" id="CzA-p4-Man"/>
-                <constraint firstAttribute="bottom" secondItem="XSj-W3-Uvm" secondAttribute="bottom" id="JXW-VE-qer"/>
-                <constraint firstItem="5mn-o8-Q2x" firstAttribute="top" secondItem="zy4-up-l6c" secondAttribute="top" id="KEb-DY-0ME"/>
-                <constraint firstItem="5mn-o8-Q2x" firstAttribute="centerX" secondItem="XSj-W3-Uvm" secondAttribute="centerX" id="McE-RH-zvn"/>
-                <constraint firstItem="XSj-W3-Uvm" firstAttribute="top" secondItem="5mn-o8-Q2x" secondAttribute="bottom" id="RSQ-6f-I07"/>
-                <constraint firstAttribute="trailing" secondItem="5mn-o8-Q2x" secondAttribute="trailing" id="q6N-Hf-Ynp"/>
+                <constraint firstItem="C0Q-Wm-3Il" firstAttribute="centerY" secondItem="7uu-lu-fAy" secondAttribute="centerY" id="B6R-e2-lvj"/>
+                <constraint firstItem="s2g-fp-aN4" firstAttribute="centerY" secondItem="7uu-lu-fAy" secondAttribute="bottom" id="Oeq-x7-9Gw"/>
+                <constraint firstItem="C0Q-Wm-3Il" firstAttribute="centerX" secondItem="7uu-lu-fAy" secondAttribute="centerX" id="Po6-F8-doh"/>
+                <constraint firstItem="7uu-lu-fAy" firstAttribute="top" secondItem="tNs-Li-KV9" secondAttribute="top" id="TE0-G2-vkc"/>
+                <constraint firstAttribute="trailing" secondItem="7uu-lu-fAy" secondAttribute="trailing" id="Yus-qc-gtc"/>
+                <constraint firstItem="7uu-lu-fAy" firstAttribute="leading" secondItem="tNs-Li-KV9" secondAttribute="leading" id="fhI-eZ-dUn"/>
+                <constraint firstItem="7uu-lu-fAy" firstAttribute="centerX" secondItem="s2g-fp-aN4" secondAttribute="centerX" id="m4t-kM-KO5"/>
+                <constraint firstAttribute="bottom" secondItem="7uu-lu-fAy" secondAttribute="bottom" id="yMb-ec-1Dm"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="JXW-VE-qer"/>
-                </mask>
-            </variation>
             <connections>
-                <outlet property="clusterButtonsView" destination="DMn-kT-gm8" id="Kq4-Xe-Sdi"/>
-                <outlet property="pointImage" destination="5mn-o8-Q2x" id="94L-Ou-E4k"/>
-                <outlet property="titleLabel" destination="XSj-W3-Uvm" id="4qP-K2-yY2"/>
+                <outlet property="clusterButtonsView" destination="C0Q-Wm-3Il" id="jsj-Dn-n1I"/>
+                <outlet property="pointImage" destination="7uu-lu-fAy" id="mQj-73-7fU"/>
+                <outlet property="titleLabel" destination="s2g-fp-aN4" id="ZTc-ea-XfH"/>
             </connections>
-            <point key="canvasLocation" x="206" y="146"/>
+            <point key="canvasLocation" x="362" y="146"/>
         </view>
     </objects>
     <resources>

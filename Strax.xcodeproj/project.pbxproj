@@ -319,7 +319,6 @@
 				TargetAttributes = {
 					DFE34D3D1BB3362F00096025 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = RPA728F6DQ;
 					};
 					DFE34D541BB3362F00096025 = {
 						CreatedOnToolsVersion = 7.0;
