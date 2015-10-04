@@ -12,31 +12,21 @@ func getView()->UIView{
 func makeClusterButton(annotation: UIView){
     
     
-    let innerObjects = [getView(),getView(), getView()]
+    let innerObjects = [getView(), getView(), getView(), getView(),getView()]
     
-    let clusterSpread: Float = Float(M_PI / 3.0)
-    let clusterDistance: Float = 100
+    let clusterSpread: Float = Float(M_PI / 4.0)
+    let clusterDistance: Float = 120
     
-    //
-    //  Triangle Values for Buttons' Position
-    //
-    //      /|      a: triangleA = c * cos(x)
-    //   c / | b    b: triangleB = c * sin(x)
-    //    /)x|      c: triangleHypotenuse
-    //   -----      x: degree
-    //     a
-    //
+    let center =  CGPointMake(CGRectGetMidX(annotation.bounds), CGRectGetMidY(annotation.bounds))
     
     innerObjects.enumerate().forEach { (index, view) -> () in
-        let x = clusterDistance * sinf(clusterSpread * Float(index));
-        let y = -clusterDistance * cosf(clusterSpread * Float(index));
-        view.frame = CGRectApplyAffineTransform(view.frame, CGAffineTransformMakeTranslation(CGFloat(x), CGFloat(y)))
-        //view.center = CGPointMake(CGFloat(x + 25), CGFloat(y + 25))
-        //view.transform = CGAffineTransformMakeRotation(CGFloat(clusterSpread * Float(innerObjects.count / 2)))
+        let x = clusterDistance * sinf(clusterSpread * Float(Double(index) - (Double(innerObjects.count-1))/Double(2)));
+        let y = -clusterDistance * cosf(clusterSpread * Float(Double(index) - (Double(innerObjects.count-1))/Double(2)));
+        
         annotation.addSubview(view)
+        view.center = CGPointApplyAffineTransform(center, CGAffineTransformMakeTranslation(CGFloat(x), CGFloat(y)))
     }
-    
-    annotation.transform = CGAffineTransformMakeRotation(CGFloat(clusterSpread * Float(innerObjects.count / -2)))
+
     
 }
 
@@ -45,8 +35,13 @@ view.backgroundColor = UIColor.whiteColor()
 
 let annotation = UIView(frame: CGRectMake(500, 500, 50, 50))
 annotation.backgroundColor = UIColor.redColor()
+let subViewFrame = UIView(frame: CGRectMake(0, 0, 400, 400))
+subViewFrame.center = CGPointMake(CGRectGetMidX(annotation.bounds), CGRectGetMidY(annotation.bounds))
+subViewFrame.backgroundColor = UIColor(white: 0.2, alpha: 0.2)
+subViewFrame.clipsToBounds = false
+annotation.addSubview(subViewFrame)
 view.addSubview(annotation)
-makeClusterButton(annotation)
+makeClusterButton(subViewFrame)
 
 view
 view
