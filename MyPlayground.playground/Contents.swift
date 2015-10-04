@@ -11,23 +11,19 @@ func getView()->UIView{
 
 func makeClusterButton(annotation: UIView){
     
+    let innerObjects = [getView(), getView(), getView(), getView()]
     
-    let innerObjects = [getView(), getView(), getView(), getView(),getView()]
-    
-    let clusterSpread: Float = Float(M_PI / 4.0)
-    let clusterDistance: Float = 120
+    let clusterSpread: Double = Double(M_PI / 4.0)
+    let distanceToCenter: Double = Double(annotation.frame.size.height) / 2.0
     
     let center =  CGPointMake(CGRectGetMidX(annotation.bounds), CGRectGetMidY(annotation.bounds))
     
     innerObjects.enumerate().forEach { (index, view) -> () in
-        let x = clusterDistance * sinf(clusterSpread * Float(Double(index) - (Double(innerObjects.count-1))/Double(2)));
-        let y = -clusterDistance * cosf(clusterSpread * Float(Double(index) - (Double(innerObjects.count-1))/Double(2)));
-        
+        let x = distanceToCenter * sin(clusterSpread * (Double(index) - (Double(innerObjects.count-1))/2.0));
+        let y = -distanceToCenter * cos(clusterSpread * (Double(index) - (Double(innerObjects.count-1))/2.0));
         annotation.addSubview(view)
         view.center = CGPointApplyAffineTransform(center, CGAffineTransformMakeTranslation(CGFloat(x), CGFloat(y)))
     }
-
-    
 }
 
 let view  = UIView(frame: CGRectMake(0, 0, 1000, 1000))
