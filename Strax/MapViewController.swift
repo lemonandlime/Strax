@@ -52,7 +52,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 self.lineView?.removeFromSuperview()
                 self.lineView = LineView(frame: self.view.frame)
                 self.view.addSubview(self.lineView!)
-                self.view.bringSubviewToFront(view)
+                //self.view.bringSubviewToFront(view)
             }
             view.didChangeMoveClosure = {(fromPoint, toPoint) in
                 self.lineView?.updateLine(fromPoint, toPoint: toPoint)
@@ -116,14 +116,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 self.lastTrip = trips
                 print(NSString(format: "Found and parsed %d trips", trips.count));
                 self.performSegueWithIdentifier("Trip Details", sender: nil)
-//                let alertView = UIAlertController(title: trips.first?.legs.first?.origin.name, message: trips.first?.legs.last?.destination.name, preferredStyle: UIAlertControllerStyle.Alert)
-//                
-//                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-//                    alertView.dismissViewControllerAnimated(true, completion: nil)
-//                    return
-//                })
-//                alertView.addAction(action)
-//                self.presentViewController(alertView, animated: true, completion: nil)
                 
             case .Failure(let error):
                 print(error)
@@ -144,6 +136,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     private func locationForPoint(point:CGPoint)->Location?{
         return (mapView.annotations
             .filter{CGRectContainsPoint((mapView.viewForAnnotation($0)?.frame)!, point)}
+            .filter{$0 is Annotation}
             .first as? Annotation)?
             .location
     }
