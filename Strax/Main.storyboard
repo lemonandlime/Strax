@@ -96,6 +96,10 @@
                                 <rect key="frame" x="508" y="20" width="72" height="72"/>
                                 <state key="normal" image="Search Point"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79C-M1-6o1">
+                                <rect key="frame" x="508" y="528" width="72" height="72"/>
+                                <state key="normal" image="Menu Point"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -104,7 +108,9 @@
                             <constraint firstItem="6X8-fw-N61" firstAttribute="top" secondItem="oe6-Vi-65Y" secondAttribute="bottom" id="ImY-CE-kPx"/>
                             <constraint firstItem="Su1-Vu-ui5" firstAttribute="top" secondItem="1kN-Ni-hWT" secondAttribute="top" id="Jed-c0-vei"/>
                             <constraint firstItem="Su1-Vu-ui5" firstAttribute="leading" secondItem="1kN-Ni-hWT" secondAttribute="leading" id="KGX-DR-lfw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="79C-M1-6o1" secondAttribute="trailing" id="L5M-ZX-9us"/>
                             <constraint firstAttribute="trailing" secondItem="Su1-Vu-ui5" secondAttribute="trailing" id="s2B-VO-Ot3"/>
+                            <constraint firstItem="dtM-oI-poj" firstAttribute="top" secondItem="79C-M1-6o1" secondAttribute="bottom" id="xx7-GP-oTN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -175,6 +181,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Menu Point" width="72" height="72"/>
         <image name="Search Point" width="72" height="72"/>
     </resources>
 </document>
