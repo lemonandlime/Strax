@@ -62,7 +62,10 @@ class MainViewController: UIViewController, MKMapViewDelegate {
             return view
             
         }else if let cluster = annotation as? FBAnnotationCluster{
-            let view = AnnotationClusterView.annotationView()
+            let locations = cluster.annotations.map({ (annotation) -> Location in
+                return (annotation as! Annotation).location!
+            })
+            let view = AnnotationClusterView.annotationView(locations)
             view.titleLabel.text = String(cluster.annotations.count) + " platser"
             return view
         }

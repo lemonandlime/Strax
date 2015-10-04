@@ -21,19 +21,21 @@ class AnnotationLocationView: MKAnnotationView, AnnotationView {
     
     class func annotationView(location : Location)->AnnotationLocationView {
         let view : AnnotationLocationView =  NSBundle.mainBundle().loadNibNamed("AnnotationLocationView", owner: self, options: nil).first as! AnnotationLocationView
-        view.titleLabel.text = location.name
+        view.location = location
+        view.titleLabel.text = view.location!.name
         return view
     }
     
-    class func annotationView()->AnnotationLocationView{
-        let view : AnnotationLocationView =  NSBundle.mainBundle().loadNibNamed("AnnotationLocationView", owner: self, options: nil).first as! AnnotationLocationView
-        return view
-    }
+//    class func annotationView()->AnnotationLocationView{
+//        let view : AnnotationLocationView =  NSBundle.mainBundle().loadNibNamed("AnnotationLocationView", owner: self, options: nil).first as! AnnotationLocationView
+//        return view
+//    }
     
     @IBOutlet var titleLabel : UILabel!
     @IBOutlet var pointImage : UIImageView!
     let gesturecognizer : UIPanGestureRecognizer = UIPanGestureRecognizer()
     var isTravelOrigin = false
+    var location: Location?
     var didBeginMoveClosure:((CGPoint, UIView)->Void)?
     var didChangeMoveClosure:((CGPoint, CGPoint)->Void)?
     var didEndMoveClosure:((CGPoint, CGPoint)->Void)?
