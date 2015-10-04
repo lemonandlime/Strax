@@ -24,6 +24,8 @@ struct TravelLocation: BaseLocation {
     let lat: NSNumber
     let routeIdx: String?
     let date: NSDate
+    let dateString: String
+    let timeString: String
     
     
     
@@ -36,7 +38,9 @@ struct TravelLocation: BaseLocation {
         lon     = NSString(string: info["lon"]!).doubleValue
         lat     = NSString(string: info["lat"]!).doubleValue
         routeIdx = info["routeIdx"]
-        date = TravelLocation.dateFrom(info["date"]!, timeString: info["time"]!)
+        dateString = info["date"]!
+        timeString = info["time"]!
+        date = TravelLocation.dateFrom(dateString, timeString: timeString)
         
     }
     

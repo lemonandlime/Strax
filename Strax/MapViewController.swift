@@ -17,6 +17,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var lineView : LineView?
     let clusterManager = FBClusteringManager()
     let locationManager = CLLocationManager()
+    var lastTrip = Array<Trip>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,19 +113,31 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         SLDataProvider.sharedInstance.getTrip(from.id, to: to.id) { (result) -> Void in
             switch result {
             case .Success(let trips):
+                self.lastTrip = trips
                 print(NSString(format: "Found and parsed %d trips", trips.count));
-                let alertView = UIAlertController(title: trips.first?.legs.first?.origin.name, message: trips.first?.legs.last?.destination.name, preferredStyle: UIAlertControllerStyle.Alert)
-                
-                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                    alertView.dismissViewControllerAnimated(true, completion: nil)
-                    return
-                })
-                alertView.addAction(action)
-                self.presentViewController(alertView, animated: true, completion: nil)
+                self.performSegueWithIdentifier("Trip Details", sender: nil)
+//                let alertView = UIAlertController(title: trips.first?.legs.first?.origin.name, message: trips.first?.legs.last?.destination.name, preferredStyle: UIAlertControllerStyle.Alert)
+//                
+//                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+//                    alertView.dismissViewControllerAnimated(true, completion: nil)
+//                    return
+//                })
+//                alertView.addAction(action)
+//                self.presentViewController(alertView, animated: true, completion: nil)
                 
             case .Failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+        case "Trip Details":
+            (segue.destinationViewController as! TripViewController).trips = lastTrip
+            break
+        default:
+            break
         }
     }
     

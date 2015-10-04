@@ -66,6 +66,7 @@ struct Leg: BaseLeg{
     let GeometryRef: String
     
     init(info: Dictionary<String, AnyObject>) {
+        print(info)
         name                = info["name"] as! String
         type                = TravelType(rawValue: info["type"] as! String)!
         direction           = info["dir"] as? String
