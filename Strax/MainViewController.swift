@@ -38,7 +38,7 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
         
         if let location = (annotation as? Annotation)?.location {
-            let view =  AnnotationView.annotationView(location)
+            let view =  AnnotationLocationView.annotationView(location)
             
             view.didBeginMoveClosure = {(fromPoint, view) in
                 self.lineView?.removeFromSuperview()
@@ -62,7 +62,7 @@ class MainViewController: UIViewController, MKMapViewDelegate {
             return view
             
         }else if let cluster = annotation as? FBAnnotationCluster{
-            let view = AnnotationView.annotationView()
+            let view = AnnotationClusterView.annotationView()
             view.titleLabel.text = String(cluster.annotations.count) + " platser"
             return view
         }
@@ -83,7 +83,7 @@ class MainViewController: UIViewController, MKMapViewDelegate {
         let array : Array<AnnotationView> = Array()
         for annotation in  subViews{
             let object = mapView.viewForAnnotation(annotation)
-            if let locationView = object as? AnnotationView{
+            if var locationView = object as? AnnotationView{
                 UIView.animateWithDuration(0.2, animations: { () -> Void in
                     locationView.highlighted = CGRectContainsPoint(locationView.frame, point)
                 })

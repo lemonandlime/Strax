@@ -1,5 +1,5 @@
 //
-//  AnnotationView.swift
+//  AnnotationLocationView.swift
 //  Strax
 //
 //  Created by Karl Söderberg on 2015-06-27.
@@ -9,16 +9,24 @@
 import UIKit
 import MapKit
 
-class AnnotationView: MKAnnotationView {
+protocol AnnotationView{
+    var titleLabel: UILabel! {get}
+    var pointImage: UIImageView! {get}
+    var isTravelOrigin: Bool {get set}
+    var frame: CGRect {get set}
+    var highlighted: Bool {get set}
+}
+
+class AnnotationLocationView: MKAnnotationView, AnnotationView {
     
-    class func annotationView(location : Location)->AnnotationView {
-        let view : AnnotationView =  NSBundle.mainBundle().loadNibNamed("AnnotationView", owner: self, options: nil).first as! AnnotationView
+    class func annotationView(location : Location)->AnnotationLocationView {
+        let view : AnnotationLocationView =  NSBundle.mainBundle().loadNibNamed("AnnotationLocationView", owner: self, options: nil).first as! AnnotationLocationView
         view.titleLabel.text = location.name
         return view
     }
     
-    class func annotationView()->AnnotationView{
-        let view : AnnotationView =  NSBundle.mainBundle().loadNibNamed("AnnotationView", owner: self, options: nil).first as! AnnotationView
+    class func annotationView()->AnnotationLocationView{
+        let view : AnnotationLocationView =  NSBundle.mainBundle().loadNibNamed("AnnotationLocationView", owner: self, options: nil).first as! AnnotationLocationView
         return view
     }
     
