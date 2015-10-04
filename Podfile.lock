@@ -1,14 +1,17 @@
 PODS:
+  - AHKNavigationController (1.3)
   - Alamofire (3.0.0-beta.1)
   - FBAnnotationClustering (0.2.1)
   - SwiftyJSON (2.3.0)
 
 DEPENDENCIES:
+  - AHKNavigationController (~> 1.3)
   - Alamofire (= 3.0.0-beta.1)
   - FBAnnotationClustering (~> 0.1)
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
+  AHKNavigationController: 3b8d5177e1a9c6dde5d16964b97781dea88457bf
   Alamofire: b1b493dfb758bb73e6eafce616ea529aca18b2ad
   FBAnnotationClustering: 2431c3669b7dced300243e761c8ade6115183448
   SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4

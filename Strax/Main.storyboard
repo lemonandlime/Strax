@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kDE-qU-LM4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xs9-IX-KKz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -42,7 +42,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="kDE-qU-LM4" kind="presentation" id="nw2-za-jwZ"/>
+                                            <segue destination="kFN-43-X11" kind="presentation" id="UfM-rg-7dF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,7 +75,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehz-c9-hjs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-601" y="-15"/>
+            <point key="canvasLocation" x="-1081" y="-339"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eUj-dq-5jN">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="kFN-43-X11" customClass="AHKNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TKY-Ix-LWE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kDE-qU-LM4" kind="relationship" relationship="rootViewController" id="NIt-j6-f8B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTc-Z8-KD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-398" y="-339"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="55H-AC-vfn">
@@ -113,14 +129,15 @@
                             <constraint firstItem="dtM-oI-poj" firstAttribute="top" secondItem="79C-M1-6o1" secondAttribute="bottom" id="xx7-GP-oTN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="L8L-4I-0dx"/>
                     <connections>
                         <outlet property="mapView" destination="Su1-Vu-ui5" id="A38-V0-wor"/>
-                        <segue destination="27j-sJ-Ahf" kind="presentation" identifier="Trip Details" id="gzc-F6-xL8"/>
+                        <segue destination="27j-sJ-Ahf" kind="show" identifier="Trip Details" id="gzc-F6-xL8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riP-Gq-AfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="-7"/>
+            <point key="canvasLocation" x="-398" y="389"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Pjh-St-YRi">
@@ -142,7 +159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-lG-g11">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-lG-g11">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -262,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hr6-21-2Oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="-7"/>
+            <point key="canvasLocation" x="-398" y="1088"/>
         </scene>
     </scenes>
     <resources>
