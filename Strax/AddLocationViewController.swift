@@ -38,7 +38,7 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate, UITextFiel
         return pointView
     }
     
-    func mapView(mapView: MKMapView, didAddAnnotationViews views: [MKAnnotationView]){
+    func mapView(mapView: MKMapView, didAddAnnotationLocationViews views: [MKAnnotationView]){
         for view in annotationViews{
             view.removeFromSuperview()
             self.textField.superview!.addSubview(view)

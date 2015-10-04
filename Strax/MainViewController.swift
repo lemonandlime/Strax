@@ -8,88 +8,95 @@
 
 import UIKit
 import MapKit
+import FBAnnotationClustering
 
 class MainViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
     var locations : [Location!] = []
     var lineView : LineView?
+    let clusterManager = FBClusteringManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         locations = DBManager.sharedInstance.allLocations()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
         let annotations = locations.map { (location) -> Annotation in
             let annotation = Annotation()
             annotation.location = location
             return annotation
         }
-        
-        mapView.showAnnotations(annotations, animated: false)
+        clusterManager.addAnnotations(annotations)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        mapView.showAnnotations(clusterManager.allAnnotations() as! [MKAnnotation], animated: false)
     }
     
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
         
-        guard let location = (annotation as? Annotation)?.location else{
-            assertionFailure("Annotation must contain location object")
-            return nil
-        }
-        let view =  LocationView.locationView(location)
-        
-        view.didBeginMoveClosure = {(fromPoint, view) in
-            self.lineView?.removeFromSuperview()
-            self.lineView = LineView(frame: self.view.frame)
-            self.view.addSubview(self.lineView!)
-            self.view.bringSubviewToFront(view)
-        }
-        view.didChangeMoveClosure = {(fromPoint, toPoint) in
-            self.lineView?.updateLine(fromPoint, toPoint: toPoint)
-            self.highlightViewsContainingPoint(toPoint)
-        }
-        view.didEndMoveClosure = {(fromPoint, toPoint) in
-            self.lineView?.removeFromSuperview()
-            self.lineView = nil
-            self.findTravel(fromPoint, toPoint: toPoint, successClosure: { (travel) -> Void in
-                return
+        if let location = (annotation as? Annotation)?.location {
+            let view =  AnnotationLocationView.annotationView(location)
+            
+            view.didBeginMoveClosure = {(fromPoint, view) in
+                self.lineView?.removeFromSuperview()
+                self.lineView = LineView(frame: self.view.frame)
+                self.view.addSubview(self.lineView!)
+                self.view.bringSubviewToFront(view)
+            }
+            view.didChangeMoveClosure = {(fromPoint, toPoint) in
+                self.lineView?.updateLine(fromPoint, toPoint: toPoint)
+                self.highlightViewsContainingPoint(toPoint)
+            }
+            view.didEndMoveClosure = {(fromPoint, toPoint) in
+                self.lineView?.removeFromSuperview()
+                self.lineView = nil
+                self.unHighlightAllViews()
+                self.findTravel(fromPoint, toPoint: toPoint, successClosure: { (travel) -> Void in
+                    return
+                })
+            }
+            
+            return view
+            
+        }else if let cluster = annotation as? FBAnnotationCluster{
+            let locations = cluster.annotations.map({ (annotation) -> Location in
+                return (annotation as! Annotation).location!
             })
+            let view = AnnotationClusterView.annotationView(locations)
+            view.titleLabel.text = String(cluster.annotations.count) + " platser"
+            return view
         }
-        
-        return view
-
+        return nil
+    }
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        NSOperationQueue().addOperationWithBlock { () -> Void in
+            let scale = Double(mapView.bounds.size.width) / mapView.visibleMapRect.size.width
+            let annotations = self.clusterManager.clusteredAnnotationsWithinMapRect(mapView.visibleMapRect, withZoomScale: scale)
+            self.clusterManager.displayAnnotations(annotations, onMapView: mapView)
+        }
     }
     
     
-    private func highlightViewsContainingPoint(point:CGPoint)->Array<LocationView>{
-        
+    private func highlightViewsContainingPoint(point:CGPoint)->Array<AnnotationView>{
         let subViews = self.mapView.annotations
-        
-        let array : Array<LocationView> = Array()
+        let array : Array<AnnotationView> = Array()
         for annotation in  subViews{
             let object = mapView.viewForAnnotation(annotation)
-            if let locationView = object as? LocationView{
-                if CGRectContainsPoint(locationView.frame, point){
-                    UIView.animateWithDuration(0.2, animations: { () -> Void in
-                        locationView.pointImage.highlighted = true
-                        locationView.transform = CGAffineTransformIdentity
-                    })
-                    
-                }else{
-                    UIView.animateWithDuration(0.2, animations: { () -> Void in
-                        locationView.pointImage.highlighted = false
-                        locationView.transform = CGAffineTransformMakeScale(0.5, 0.5)
-                    })
-                }
-                
+            if var locationView = object as? AnnotationView{
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    locationView.highlighted = CGRectContainsPoint(locationView.frame, point)
+                })
             }
-            
         }
         return array
+    }
+    
+    private func unHighlightAllViews(){
+        self.mapView.annotations.forEach {mapView.viewForAnnotation($0)?.highlighted = false}
     }
     
     private func findTravel(fromPoint:CGPoint, toPoint:CGPoint, successClosure:(travel: Dictionary<String, AnyObject>)->Void){
