@@ -16,9 +16,11 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     var locations : [Location!] = []
     var lineView : LineView?
     let clusterManager = FBClusteringManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.requestAlwaysAuthorization()
         mapView.delegate = self
         locations = DBManager.sharedInstance.allLocations()
         let annotations = locations.map { (location) -> Annotation in
@@ -36,6 +38,11 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
+        if let myLocation = annotation as? MKUserLocation {
+            let myLocationView = MKAnnotationView(annotation: myLocation, reuseIdentifier: "myLocation")
+            myLocationView.image = UIImage(named: "My Location Point")
+            return myLocationView
+        }
         
         if let location = (annotation as? Annotation)?.location {
             let view =  AnnotationLocationView.annotationView(location)
