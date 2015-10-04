@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import FBAnnotationClustering
 
-class MainViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
     var locations : [Location!] = []

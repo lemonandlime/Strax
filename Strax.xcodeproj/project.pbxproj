@@ -18,7 +18,7 @@
 		DFA6A7C31BB3405C0052F7D7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C21BB3405C0052F7D7 /* Location.swift */; settings = {ASSET_TAGS = (); }; };
 		DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C51BB3407D0052F7D7 /* Trip.swift */; settings = {ASSET_TAGS = (); }; };
 		DFA6A7C81BB3407D0052F7D7 /* TravelLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C61BB3407D0052F7D7 /* TravelLocation.swift */; settings = {ASSET_TAGS = (); }; };
-		DFA6A7CC1BB340950052F7D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C91BB340950052F7D7 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DFA6A7CC1BB340950052F7D7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C91BB340950052F7D7 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DFA6A7CD1BB340950052F7D7 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DFA6A7CE1BB340950052F7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7CB1BB340950052F7D7 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		DFA6A7D01BB340A10052F7D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
@@ -71,7 +71,7 @@
 		DFA6A7C21BB3405C0052F7D7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DFA6A7C51BB3407D0052F7D7 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		DFA6A7C61BB3407D0052F7D7 /* TravelLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelLocation.swift; sourceTree = "<group>"; };
-		DFA6A7C91BB340950052F7D7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DFA6A7C91BB340950052F7D7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		DFA6A7CB1BB340950052F7D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -132,6 +132,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		45CCAE181BC1A3E2003039F8 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				DFA6A7D11BB340C80052F7D7 /* AnnotationLocationView.xib */,
+				4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */,
+				DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */,
+				4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */,
+			);
+			name = Annotation;
+			sourceTree = "<group>";
+		};
+		45CCAE1A1BC1A41A003039F8 /* Travel Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Travel Details";
+			sourceTree = "<group>";
+		};
+		45CCAE1B1BC1A4A5003039F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFE34D411BB3362F00096025 /* AppDelegate.swift */,
+				DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */,
+				DFE34D501BB3362F00096025 /* Info.plist */,
+				DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */,
+				4548EAB41BB4B1F500A15921 /* Strax-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BEC49282F7066BD4046ABAF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,11 +187,9 @@
 		DFA6A7D91BB340CE0052F7D7 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				DFA6A7D11BB340C80052F7D7 /* AnnotationLocationView.xib */,
-				4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */,
+				DFA6A7C91BB340950052F7D7 /* MapViewController.swift */,
+				45CCAE181BC1A3E2003039F8 /* Annotation */,
 				DFA6A7D21BB340C90052F7D7 /* LineView.swift */,
-				DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */,
-				4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */,
 				DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */,
 				4548EAB21BB49D7000A15921 /* Annotation.swift */,
 			);
@@ -211,18 +239,14 @@
 		DFE34D401BB3362F00096025 /* Strax */ = {
 			isa = PBXGroup;
 			children = (
-				DFA6A7C41BB340710052F7D7 /* Models */,
-				DFA6A7D91BB340CE0052F7D7 /* Map */,
+				DFA6A7CB1BB340950052F7D7 /* Main.storyboard */,
+				DFE34D4B1BB3362F00096025 /* Assets.xcassets */,
 				DFA6A7DA1BB341440052F7D7 /* API */,
 				DFA6A7DB1BB341600052F7D7 /* Database */,
-				DFE34D411BB3362F00096025 /* AppDelegate.swift */,
-				DFE34D4B1BB3362F00096025 /* Assets.xcassets */,
-				DFA6A7C91BB340950052F7D7 /* MainViewController.swift */,
-				DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */,
-				DFA6A7CB1BB340950052F7D7 /* Main.storyboard */,
-				DFE34D501BB3362F00096025 /* Info.plist */,
-				DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */,
-				4548EAB41BB4B1F500A15921 /* Strax-Bridging-Header.h */,
+				DFA6A7C41BB340710052F7D7 /* Models */,
+				DFA6A7D91BB340CE0052F7D7 /* Map */,
+				45CCAE1A1BC1A41A003039F8 /* Travel Details */,
+				45CCAE1B1BC1A4A5003039F8 /* Supporting Files */,
 			);
 			path = Strax;
 			sourceTree = "<group>";
@@ -525,7 +549,7 @@
 				DFA6A7D61BB340C90052F7D7 /* LineView.swift in Sources */,
 				DFA6A7D81BB340C90052F7D7 /* MapInteractor.swift in Sources */,
 				DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */,
-				DFA6A7CC1BB340950052F7D7 /* MainViewController.swift in Sources */,
+				DFA6A7CC1BB340950052F7D7 /* MapViewController.swift in Sources */,
 				DFA6A7CD1BB340950052F7D7 /* AddLocationViewController.swift in Sources */,
 				DFA6A7C81BB3407D0052F7D7 /* TravelLocation.swift in Sources */,
 			);

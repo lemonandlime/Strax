@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-601" y="-15"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="55H-AC-vfn">
             <objects>
-                <viewController id="kDE-qU-LM4" customClass="MainViewController" customModule="Strax" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kDE-qU-LM4" customClass="MapViewController" customModule="Strax" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oe6-Vi-65Y"/>
                         <viewControllerLayoutGuide type="bottom" id="dtM-oI-poj"/>
