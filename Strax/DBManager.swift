@@ -46,7 +46,6 @@ class DBManager: NSObject {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error
-            //error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict as [NSObject : AnyObject])
             NSLog("Unresolved error \(error1), \(error1.userInfo)")
             abort()
         } catch {
