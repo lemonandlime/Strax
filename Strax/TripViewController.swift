@@ -11,6 +11,7 @@ import UIKit
 class TripViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var routeTableView: UITableView!
+    @IBOutlet var tableViewHeight: NSLayoutConstraint!
     
     let tripRouteViewModel = TripRouteViewModel()
     
@@ -21,6 +22,11 @@ class TripViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         tripRouteViewModel.createDataSource(trip: trips.first)
         routeTableView.dataSource = tripRouteViewModel
+        tableViewHeight.constant = CGFloat(routeTableView.numberOfRows(inSection: 0)) * 44
         
+    }
+    
+    @IBAction func didTapBackground() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
