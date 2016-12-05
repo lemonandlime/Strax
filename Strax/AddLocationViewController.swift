@@ -53,7 +53,7 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate, UITextFiel
             switch result{
             case .success(let location):
                 let aLocation = DBManager.sharedInstance.newLocation()!
-                aLocation.setLocationInfo(location as! NSDictionary)
+                aLocation.setLocationInfo(location as! [String : Any])
                 DBManager.sharedInstance.saveContext()
                 self.addAnnotation(aLocation)
                 

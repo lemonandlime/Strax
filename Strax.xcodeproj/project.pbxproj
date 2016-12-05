@@ -34,26 +34,7 @@
 		DFE34D421BB3362F00096025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D411BB3362F00096025 /* AppDelegate.swift */; };
 		DFE34D4A1BB3362F00096025 /* Strax.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D481BB3362F00096025 /* Strax.xcdatamodeld */; };
 		DFE34D4C1BB3362F00096025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE34D4B1BB3362F00096025 /* Assets.xcassets */; };
-		DFE34D5A1BB3362F00096025 /* StraxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D591BB3362F00096025 /* StraxTests.swift */; };
-		DFE34D651BB3362F00096025 /* StraxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D641BB3362F00096025 /* StraxUITests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DFE34D561BB3362F00096025 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFE34D361BB3362F00096025 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DFE34D3D1BB3362F00096025;
-			remoteInfo = Strax;
-		};
-		DFE34D611BB3362F00096025 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFE34D361BB3362F00096025 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DFE34D3D1BB3362F00096025;
-			remoteInfo = Strax;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0F8F08391DF61D1A00307C02 /* Embed Frameworks */ = {
@@ -100,12 +81,6 @@
 		DFE34D491BB3362F00096025 /* Strax.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Strax.xcdatamodel; sourceTree = "<group>"; };
 		DFE34D4B1BB3362F00096025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFE34D501BB3362F00096025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFE34D551BB3362F00096025 /* StraxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StraxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFE34D591BB3362F00096025 /* StraxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraxTests.swift; sourceTree = "<group>"; };
-		DFE34D5B1BB3362F00096025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFE34D601BB3362F00096025 /* StraxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StraxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFE34D641BB3362F00096025 /* StraxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraxUITests.swift; sourceTree = "<group>"; };
-		DFE34D661BB3362F00096025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,20 +92,6 @@
 				0F8F08351DF61D1A00307C02 /* Alamofire.framework in Frameworks */,
 				0F8F083B1DF6219000307C02 /* FBAnnotationClustering.framework in Frameworks */,
 				45CCAE171BC19E10003039F8 /* MapKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFE34D521BB3362F00096025 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFE34D5D1BB3362F00096025 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,13 +118,6 @@
 				4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */,
 			);
 			name = Annotation;
-			sourceTree = "<group>";
-		};
-		45CCAE1A1BC1A41A003039F8 /* Travel Details */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Travel Details";
 			sourceTree = "<group>";
 		};
 		45CCAE1B1BC1A4A5003039F8 /* Supporting Files */ = {
@@ -223,8 +177,6 @@
 				0FF7FC441DF608FD00E1E4E7 /* Cartfile */,
 				0FF7FC421DF608A700E1E4E7 /* Podfile */,
 				DFE34D401BB3362F00096025 /* Strax */,
-				DFE34D581BB3362F00096025 /* StraxTests */,
-				DFE34D631BB3362F00096025 /* StraxUITests */,
 				DFE34D3F1BB3362F00096025 /* Products */,
 				0FF7FC461DF60E8C00E1E4E7 /* Frameworks */,
 			);
@@ -234,8 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				DFE34D3E1BB3362F00096025 /* Strax.app */,
-				DFE34D551BB3362F00096025 /* StraxTests.xctest */,
-				DFE34D601BB3362F00096025 /* StraxUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,28 +199,9 @@
 				DFA6A7DB1BB341600052F7D7 /* Database */,
 				DFA6A7C41BB340710052F7D7 /* Models */,
 				DFA6A7D91BB340CE0052F7D7 /* Map */,
-				45CCAE1A1BC1A41A003039F8 /* Travel Details */,
 				45CCAE1B1BC1A4A5003039F8 /* Supporting Files */,
 			);
 			path = Strax;
-			sourceTree = "<group>";
-		};
-		DFE34D581BB3362F00096025 /* StraxTests */ = {
-			isa = PBXGroup;
-			children = (
-				DFE34D591BB3362F00096025 /* StraxTests.swift */,
-				DFE34D5B1BB3362F00096025 /* Info.plist */,
-			);
-			path = StraxTests;
-			sourceTree = "<group>";
-		};
-		DFE34D631BB3362F00096025 /* StraxUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DFE34D641BB3362F00096025 /* StraxUITests.swift */,
-				DFE34D661BB3362F00096025 /* Info.plist */,
-			);
-			path = StraxUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,42 +225,6 @@
 			productReference = DFE34D3E1BB3362F00096025 /* Strax.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DFE34D541BB3362F00096025 /* StraxTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DFE34D6C1BB3362F00096025 /* Build configuration list for PBXNativeTarget "StraxTests" */;
-			buildPhases = (
-				DFE34D511BB3362F00096025 /* Sources */,
-				DFE34D521BB3362F00096025 /* Frameworks */,
-				DFE34D531BB3362F00096025 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DFE34D571BB3362F00096025 /* PBXTargetDependency */,
-			);
-			name = StraxTests;
-			productName = StraxTests;
-			productReference = DFE34D551BB3362F00096025 /* StraxTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DFE34D5F1BB3362F00096025 /* StraxUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DFE34D6F1BB3362F00096025 /* Build configuration list for PBXNativeTarget "StraxUITests" */;
-			buildPhases = (
-				DFE34D5C1BB3362F00096025 /* Sources */,
-				DFE34D5D1BB3362F00096025 /* Frameworks */,
-				DFE34D5E1BB3362F00096025 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DFE34D621BB3362F00096025 /* PBXTargetDependency */,
-			);
-			name = StraxUITests;
-			productName = StraxUITests;
-			productReference = DFE34D601BB3362F00096025 /* StraxUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -349,16 +244,6 @@
 							};
 						};
 					};
-					DFE34D541BB3362F00096025 = {
-						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 0820;
-						TestTargetID = DFE34D3D1BB3362F00096025;
-					};
-					DFE34D5F1BB3362F00096025 = {
-						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 0820;
-						TestTargetID = DFE34D3D1BB3362F00096025;
-					};
 				};
 			};
 			buildConfigurationList = DFE34D391BB3362F00096025 /* Build configuration list for PBXProject "Strax" */;
@@ -375,8 +260,6 @@
 			projectRoot = "";
 			targets = (
 				DFE34D3D1BB3362F00096025 /* Strax */,
-				DFE34D541BB3362F00096025 /* StraxTests */,
-				DFE34D5F1BB3362F00096025 /* StraxUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -392,20 +275,6 @@
 				DFA6A7D01BB340A10052F7D7 /* LaunchScreen.xib in Resources */,
 				0FF7FC451DF608FD00E1E4E7 /* Cartfile in Resources */,
 				DFA6A7CE1BB340950052F7D7 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFE34D531BB3362F00096025 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFE34D5E1BB3362F00096025 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,36 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFE34D511BB3362F00096025 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFE34D5A1BB3362F00096025 /* StraxTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFE34D5C1BB3362F00096025 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFE34D651BB3362F00096025 /* StraxUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DFE34D571BB3362F00096025 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DFE34D3D1BB3362F00096025 /* Strax */;
-			targetProxy = DFE34D561BB3362F00096025 /* PBXContainerItemProxy */;
-		};
-		DFE34D621BB3362F00096025 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DFE34D3D1BB3362F00096025 /* Strax */;
-			targetProxy = DFE34D611BB3362F00096025 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DFE34D671BB3362F00096025 /* Debug */ = {
@@ -596,58 +436,6 @@
 			};
 			name = Release;
 		};
-		DFE34D6D1BB3362F00096025 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = StraxTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Strax.app/Strax";
-			};
-			name = Debug;
-		};
-		DFE34D6E1BB3362F00096025 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = StraxTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Strax.app/Strax";
-			};
-			name = Release;
-		};
-		DFE34D701BB3362F00096025 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = StraxUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Strax;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		DFE34D711BB3362F00096025 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = StraxUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Strax;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -665,24 +453,6 @@
 			buildConfigurations = (
 				DFE34D6A1BB3362F00096025 /* Debug */,
 				DFE34D6B1BB3362F00096025 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DFE34D6C1BB3362F00096025 /* Build configuration list for PBXNativeTarget "StraxTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DFE34D6D1BB3362F00096025 /* Debug */,
-				DFE34D6E1BB3362F00096025 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DFE34D6F1BB3362F00096025 /* Build configuration list for PBXNativeTarget "StraxUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DFE34D701BB3362F00096025 /* Debug */,
-				DFE34D711BB3362F00096025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

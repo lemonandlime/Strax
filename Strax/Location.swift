@@ -26,7 +26,7 @@ class Location: NSManagedObject, BaseLocation {
     @NSManaged var lon: Double
     @NSManaged var lat: Double
     
-    func setLocationInfo(_ info:NSDictionary){
+    func setLocationInfo(_ info:[String: Any]){
         name = info["Name"] as! String
         id = info["SiteId"] as! String
         type = info["Type"] as! String
