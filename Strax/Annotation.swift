@@ -20,5 +20,4 @@ class Annotation: MKPointAnnotation {
             self.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(location!.lon), CLLocationDegrees(location!.lat))
         }
     }
-    var type: Type = .poi
 }

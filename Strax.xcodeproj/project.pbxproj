@@ -11,21 +11,25 @@
 		0F8F08361DF61D1A00307C02 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0F8F08371DF61D1A00307C02 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC481DF60E8C00E1E4E7 /* SwiftyJSON.framework */; };
 		0F8F08381DF61D1A00307C02 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC481DF60E8C00E1E4E7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0FF7FC431DF608A700E1E4E7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0FF7FC421DF608A700E1E4E7 /* Podfile */; };
+		0F8F083B1DF6219000307C02 /* FBAnnotationClustering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */; };
+		0F8F083C1DF6219000307C02 /* FBAnnotationClustering.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0FF7FC451DF608FD00E1E4E7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 0FF7FC441DF608FD00E1E4E7 /* Cartfile */; };
+		4525B97A1BC1607600FC03DC /* AnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */; };
+		4525B97C1BC1625100FC03DC /* AnnotationClusterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */; };
 		4548EAB31BB49D7000A15921 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548EAB21BB49D7000A15921 /* Annotation.swift */; };
+		45CCAE171BC19E10003039F8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CCAE161BC19E10003039F8 /* MapKit.framework */; };
 		DFA6A7BD1BB340300052F7D7 /* SLDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */; };
 		DFA6A7C11BB340500052F7D7 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C01BB340500052F7D7 /* DBManager.swift */; };
 		DFA6A7C31BB3405C0052F7D7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C21BB3405C0052F7D7 /* Location.swift */; };
 		DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C51BB3407D0052F7D7 /* Trip.swift */; };
 		DFA6A7C81BB3407D0052F7D7 /* TravelLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C61BB3407D0052F7D7 /* TravelLocation.swift */; };
-		DFA6A7CC1BB340950052F7D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C91BB340950052F7D7 /* MainViewController.swift */; };
+		DFA6A7CC1BB340950052F7D7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C91BB340950052F7D7 /* MapViewController.swift */; };
 		DFA6A7CD1BB340950052F7D7 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */; };
 		DFA6A7CE1BB340950052F7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7CB1BB340950052F7D7 /* Main.storyboard */; };
 		DFA6A7D01BB340A10052F7D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */; };
-		DFA6A7D51BB340C90052F7D7 /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7D11BB340C80052F7D7 /* LocationView.xib */; };
+		DFA6A7D51BB340C90052F7D7 /* AnnotationLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7D11BB340C80052F7D7 /* AnnotationLocationView.xib */; };
 		DFA6A7D61BB340C90052F7D7 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D21BB340C90052F7D7 /* LineView.swift */; };
-		DFA6A7D71BB340C90052F7D7 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D31BB340C90052F7D7 /* LocationView.swift */; };
+		DFA6A7D71BB340C90052F7D7 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */; };
 		DFA6A7D81BB340C90052F7D7 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */; };
 		DFE34D421BB3362F00096025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D411BB3362F00096025 /* AppDelegate.swift */; };
 		DFE34D4A1BB3362F00096025 /* Strax.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D481BB3362F00096025 /* Strax.xcdatamodeld */; };
@@ -58,6 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0F8F083C1DF6219000307C02 /* FBAnnotationClustering.framework in Embed Frameworks */,
 				0F8F08381DF61D1A00307C02 /* SwiftyJSON.framework in Embed Frameworks */,
 				0F8F08361DF61D1A00307C02 /* Alamofire.framework in Embed Frameworks */,
 			);
@@ -67,23 +72,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAnnotationClustering.framework; path = Carthage/Build/iOS/FBAnnotationClustering.framework; sourceTree = "<group>"; };
 		0FF7FC421DF608A700E1E4E7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		0FF7FC441DF608FD00E1E4E7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0FF7FC481DF60E8C00E1E4E7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationClusterView.swift; sourceTree = "<group>"; };
+		4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationClusterView.xib; sourceTree = "<group>"; };
 		4548EAB21BB49D7000A15921 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		4548EAB41BB4B1F500A15921 /* Strax-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Strax-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		45CCAE161BC19E10003039F8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDataProvider.swift; sourceTree = "<group>"; };
 		DFA6A7C01BB340500052F7D7 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		DFA6A7C21BB3405C0052F7D7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DFA6A7C51BB3407D0052F7D7 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		DFA6A7C61BB3407D0052F7D7 /* TravelLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelLocation.swift; sourceTree = "<group>"; };
-		DFA6A7C91BB340950052F7D7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DFA6A7C91BB340950052F7D7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		DFA6A7CB1BB340950052F7D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		DFA6A7D11BB340C80052F7D7 /* LocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
+		DFA6A7D11BB340C80052F7D7 /* AnnotationLocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationLocationView.xib; sourceTree = "<group>"; };
 		DFA6A7D21BB340C90052F7D7 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
-		DFA6A7D31BB340C90052F7D7 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		DFE34D3E1BB3362F00096025 /* Strax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Strax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE34D411BB3362F00096025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +115,8 @@
 			files = (
 				0F8F08371DF61D1A00307C02 /* SwiftyJSON.framework in Frameworks */,
 				0F8F08351DF61D1A00307C02 /* Alamofire.framework in Frameworks */,
+				0F8F083B1DF6219000307C02 /* FBAnnotationClustering.framework in Frameworks */,
+				45CCAE171BC19E10003039F8 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,10 +140,42 @@
 		0FF7FC461DF60E8C00E1E4E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */,
 				0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */,
 				0FF7FC481DF60E8C00E1E4E7 /* SwiftyJSON.framework */,
+				45CCAE161BC19E10003039F8 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45CCAE181BC1A3E2003039F8 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				DFA6A7D11BB340C80052F7D7 /* AnnotationLocationView.xib */,
+				4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */,
+				DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */,
+				4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */,
+			);
+			name = Annotation;
+			sourceTree = "<group>";
+		};
+		45CCAE1A1BC1A41A003039F8 /* Travel Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Travel Details";
+			sourceTree = "<group>";
+		};
+		45CCAE1B1BC1A4A5003039F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFE34D411BB3362F00096025 /* AppDelegate.swift */,
+				DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */,
+				DFE34D501BB3362F00096025 /* Info.plist */,
+				DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */,
+				4548EAB41BB4B1F500A15921 /* Strax-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		DFA6A7C41BB340710052F7D7 /* Models */ = {
@@ -146,9 +190,9 @@
 		DFA6A7D91BB340CE0052F7D7 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				DFA6A7D11BB340C80052F7D7 /* LocationView.xib */,
+				DFA6A7C91BB340950052F7D7 /* MapViewController.swift */,
+				45CCAE181BC1A3E2003039F8 /* Annotation */,
 				DFA6A7D21BB340C90052F7D7 /* LineView.swift */,
-				DFA6A7D31BB340C90052F7D7 /* LocationView.swift */,
 				DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */,
 				4548EAB21BB49D7000A15921 /* Annotation.swift */,
 			);
@@ -199,17 +243,14 @@
 		DFE34D401BB3362F00096025 /* Strax */ = {
 			isa = PBXGroup;
 			children = (
-				DFA6A7C41BB340710052F7D7 /* Models */,
-				DFA6A7D91BB340CE0052F7D7 /* Map */,
+				DFA6A7CB1BB340950052F7D7 /* Main.storyboard */,
+				DFE34D4B1BB3362F00096025 /* Assets.xcassets */,
 				DFA6A7DA1BB341440052F7D7 /* API */,
 				DFA6A7DB1BB341600052F7D7 /* Database */,
-				DFE34D411BB3362F00096025 /* AppDelegate.swift */,
-				DFE34D4B1BB3362F00096025 /* Assets.xcassets */,
-				DFA6A7C91BB340950052F7D7 /* MainViewController.swift */,
-				DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */,
-				DFA6A7CB1BB340950052F7D7 /* Main.storyboard */,
-				DFE34D501BB3362F00096025 /* Info.plist */,
-				DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */,
+				DFA6A7C41BB340710052F7D7 /* Models */,
+				DFA6A7D91BB340CE0052F7D7 /* Map */,
+				45CCAE1A1BC1A41A003039F8 /* Travel Details */,
+				45CCAE1B1BC1A4A5003039F8 /* Supporting Files */,
 			);
 			path = Strax;
 			sourceTree = "<group>";
@@ -302,6 +343,11 @@
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = N856DL6EH7;
 						LastSwiftMigration = 0820;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					DFE34D541BB3362F00096025 = {
 						CreatedOnToolsVersion = 7.0;
@@ -340,9 +386,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FF7FC431DF608A700E1E4E7 /* Podfile in Resources */,
 				DFE34D4C1BB3362F00096025 /* Assets.xcassets in Resources */,
-				DFA6A7D51BB340C90052F7D7 /* LocationView.xib in Resources */,
+				DFA6A7D51BB340C90052F7D7 /* AnnotationLocationView.xib in Resources */,
+				4525B97C1BC1625100FC03DC /* AnnotationClusterView.xib in Resources */,
 				DFA6A7D01BB340A10052F7D7 /* LaunchScreen.xib in Resources */,
 				0FF7FC451DF608FD00E1E4E7 /* Cartfile in Resources */,
 				DFA6A7CE1BB340950052F7D7 /* Main.storyboard in Resources */,
@@ -371,16 +417,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA6A7C11BB340500052F7D7 /* DBManager.swift in Sources */,
-				DFA6A7D71BB340C90052F7D7 /* LocationView.swift in Sources */,
+				DFA6A7D71BB340C90052F7D7 /* AnnotationView.swift in Sources */,
 				DFE34D4A1BB3362F00096025 /* Strax.xcdatamodeld in Sources */,
 				DFA6A7BD1BB340300052F7D7 /* SLDataProvider.swift in Sources */,
+				4525B97A1BC1607600FC03DC /* AnnotationClusterView.swift in Sources */,
 				4548EAB31BB49D7000A15921 /* Annotation.swift in Sources */,
 				DFE34D421BB3362F00096025 /* AppDelegate.swift in Sources */,
 				DFA6A7C31BB3405C0052F7D7 /* Location.swift in Sources */,
 				DFA6A7D61BB340C90052F7D7 /* LineView.swift in Sources */,
 				DFA6A7D81BB340C90052F7D7 /* MapInteractor.swift in Sources */,
 				DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */,
-				DFA6A7CC1BB340950052F7D7 /* MainViewController.swift in Sources */,
+				DFA6A7CC1BB340950052F7D7 /* MapViewController.swift in Sources */,
 				DFA6A7CD1BB340950052F7D7 /* AddLocationViewController.swift in Sources */,
 				DFA6A7C81BB3407D0052F7D7 /* TravelLocation.swift in Sources */,
 			);
@@ -512,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = N856DL6EH7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -522,6 +570,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.Strax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Strax-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -530,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = N856DL6EH7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -540,6 +591,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.Strax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Strax-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

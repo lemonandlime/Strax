@@ -3,3 +3,5 @@ github "Alamofire/Alamofire"
 
 # Require version 1.x
 github "SwiftyJSON/SwiftyJSON"
+
+github "infinum/FBAnnotationClustering"
