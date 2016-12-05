@@ -12,6 +12,7 @@ import Alamofire
 
 
 
+
 private let _sharedInstance = SLDataProvider()
 private let baseUrl = "http://api.sl.se/api2/"
 private let key = "35ea4763c2cc4c47b9aaef634b728943"
@@ -23,57 +24,47 @@ class SLDataProvider: NSObject {
         return _sharedInstance
     }
     
-    func getTrip(from:String, to: String, onCompletion: (Result<Array<Trip>, NSError>) -> Void) {
+    func getTrip(_ from:String, to: String, onCompletion: @escaping (Result<Array<Trip>>) -> Void) {
         let parameters = ["key":key, "originId":from, "destId":to]
         
-        Alamofire.request(
-            .GET,
-            NSURL(string: baseUrl+"TravelplannerV2/trip.JSON")!,
-            parameters: parameters,
-            encoding: .URL,
-            headers: nil)
-            .responseData { (response) -> Void in
-
+        let request = Alamofire.request(URL(string: baseUrl+"TravelplannerV2/trip.JSON")!, parameters: parameters)
+        
+        request.validate().responseData { (response) in
             switch response.result {
-            case .Success(let object):
+            case .success(let object):
                 let json = JSON(data: object)
                 var trips = Array<Trip>()
                 json["TripList"]["Trip"].forEach({ (_, trip: JSON) -> (Void) in
                     trips.append(Trip(info: trip))
                 })
-                onCompletion(Result.Success(trips))
+                onCompletion(Result.success(trips))
                 break
                 
-            case.Failure(let error):
-                onCompletion(Result.Failure(error))
+            case.failure(let error):
+                onCompletion(Result.failure(error))
                 break
             }
         }
     }
     
-    func getLocation(name:String, onCompletion: (Result<AnyObject, NSError>) ->Void){
+    func getLocation(_ name:String, onCompletion: @escaping (Result<Any>) ->Void){
         let parameters = ["key":nameKey, "searchstring":name]
         
-        Alamofire.request(
-            .GET,
-            NSURL(string: baseUrl+"typeahead.JSON")!,
-            parameters: parameters,
-            encoding: .URL,
-            headers: nil)
-            .responseData { (response) -> Void in
-            
+        let request = Alamofire.request(URL(string: baseUrl+"typeahead.JSON")!, parameters: parameters)
+
+        request.validate().responseData { (response) in
             switch response.result{
-            case .Success(let object):
+            case .success(let object):
                 let json = JSON(data: object)
-                if json["ResponseData"].array?.count > 0{
-                    onCompletion(Result.Success(json["ResponseData"].arrayObject![0]))
+                if (json["ResponseData"].array?.count)! > 0{
+                    onCompletion(Result.success(json["ResponseData"].arrayObject![0]))
                 }else{
-                    onCompletion(Result.Failure( NSError(domain: "SLData", code: 101, userInfo: nil)))
+                    onCompletion(Result.failure( NSError(domain: "SLData", code: 101, userInfo: nil)))
                 }
                 
                 
-            case .Failure(let error):
-                onCompletion(Result.Failure(error))
+            case .failure(let error):
+                onCompletion(Result.failure(error))
             }
         }
     }

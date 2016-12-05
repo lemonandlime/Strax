@@ -23,20 +23,20 @@ class Location: NSManagedObject, BaseLocation {
     @NSManaged var name: String
     @NSManaged var id: String
     @NSManaged var type: String
-    @NSManaged var lon: NSNumber
-    @NSManaged var lat: NSNumber
+    @NSManaged var lon: Double
+    @NSManaged var lat: Double
     
-    func setLocationInfo(info:NSDictionary){
+    func setLocationInfo(_ info:NSDictionary){
         name = info["Name"] as! String
         id = info["SiteId"] as! String
         type = info["Type"] as! String
         
         var xValue = info[key.lat.rawValue] as! String
-        xValue.insert(".", atIndex: xValue.startIndex.advancedBy(2))
+        xValue.insert(".", at: xValue.characters.index(xValue.startIndex, offsetBy: 2))
         lat = NSString(string:xValue).doubleValue
         
         var yValue = info[key.lon.rawValue] as! String
-        yValue.insert(".", atIndex: yValue.startIndex.advancedBy(2))
+        yValue.insert(".", at: yValue.characters.index(yValue.startIndex, offsetBy: 2))
         lon = NSString(string:yValue).doubleValue
     }
 }

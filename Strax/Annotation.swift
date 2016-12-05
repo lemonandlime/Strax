@@ -10,9 +10,9 @@ import UIKit
 
 class Annotation: MKPointAnnotation {
 
-    enum Type {
-        case POI
-        case Cluster
+    enum `Type` {
+        case poi
+        case cluster
     }
     
     var location: Location?{
@@ -20,5 +20,5 @@ class Annotation: MKPointAnnotation {
             self.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(location!.lon), CLLocationDegrees(location!.lat))
         }
     }
-    var type: Type = .POI
+    var type: Type = .poi
 }

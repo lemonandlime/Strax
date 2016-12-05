@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xs9-IX-KKz">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xs9-IX-KKz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Add Location View Controller-->
@@ -13,21 +17,21 @@
                         <viewControllerLayoutGuide type="bottom" id="Ehp-26-NVn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rJ3-c5-eDt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wKf-th-uqq">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wKf-th-uqq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
-                            <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="gcF-BL-pNt">
+                            <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcF-BL-pNt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDW-Mk-i0C">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDW-Mk-i0C">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="eAy-2q-WuG"/>
                                         </constraints>
-                                        <color key="textColor" red="0.8980392157" green="0.67450980390000004" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.86704504489898682" green="0.59622353315353394" blue="0.83961981534957886" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans-LightItalic" family="Gill Sans" pointSize="43"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
@@ -35,17 +39,17 @@
                                             <outlet property="delegate" destination="xs9-IX-KKz" id="0hn-Xz-aSr"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSl-ec-ZmA">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSl-ec-ZmA">
                                         <rect key="frame" x="541" y="40" width="30" height="30"/>
                                         <state key="normal" title="Klar">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="kDE-qU-LM4" kind="presentation" id="nw2-za-jwZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="0.44" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.039922934025526047" green="0.039921745657920837" blue="0.039922419935464859" alpha="0.44" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="HDW-Mk-i0C" firstAttribute="top" secondItem="gcF-BL-pNt" secondAttribute="top" id="7zh-mk-jti"/>
                                     <constraint firstItem="HDW-Mk-i0C" firstAttribute="leading" secondItem="gcF-BL-pNt" secondAttribute="leading" id="UtW-uN-WAf"/>
@@ -55,7 +59,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gcF-BL-pNt" firstAttribute="leading" secondItem="rJ3-c5-eDt" secondAttribute="leading" id="BiE-Af-sP3"/>
                             <constraint firstItem="Ehp-26-NVn" firstAttribute="top" secondItem="gcF-BL-pNt" secondAttribute="bottom" id="COl-Er-EiL"/>
@@ -85,14 +89,14 @@
                         <viewControllerLayoutGuide type="bottom" id="dtM-oI-poj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1kN-Ni-hWT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Su1-Vu-ui5">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Su1-Vu-ui5">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dtM-oI-poj" firstAttribute="top" secondItem="Su1-Vu-ui5" secondAttribute="bottom" id="6Jz-SL-GnJ"/>
                             <constraint firstItem="Su1-Vu-ui5" firstAttribute="top" secondItem="1kN-Ni-hWT" secondAttribute="top" id="Jed-c0-vei"/>
@@ -126,21 +130,21 @@
                         <viewControllerLayoutGuide type="bottom" id="WLD-dy-Pli"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FgK-EX-ivC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bbq-4U-L4c">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bbq-4U-L4c">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgn-dE-bhJ">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgn-dE-bhJ">
                                 <rect key="frame" x="150" y="100" width="300" height="400"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-lG-g11">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Eak-c4-hhc"/>
                                     <constraint firstAttribute="bottom" secondItem="lvc-lG-g11" secondAttribute="bottom" id="L1u-MS-eVL"/>
@@ -151,7 +155,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bbq-4U-L4c" firstAttribute="top" secondItem="FgK-EX-ivC" secondAttribute="top" id="7im-X8-iKq"/>
                             <constraint firstItem="wgn-dE-bhJ" firstAttribute="centerX" secondItem="FgK-EX-ivC" secondAttribute="centerX" id="7nZ-UY-hy5"/>

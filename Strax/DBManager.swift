@@ -21,23 +21,23 @@ class DBManager: NSObject {
         super.init()
     }
     
-    lazy var applicationDocumentsDirectory: NSURL = {
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as NSURL
+    lazy var applicationDocumentsDirectory: URL = {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return urls[urls.count-1] as URL
         }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource("Strax", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)!
+        let modelURL = Bundle.main.url(forResource: "Strax", withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
         }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("Strax")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("Strax")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
-            try coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            try coordinator!.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
         } catch var error1 as NSError {
             error = error1
             coordinator = nil
@@ -61,7 +61,7 @@ class DBManager: NSObject {
         if coordinator == nil {
             return nil
         }
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
         }()
@@ -83,13 +83,13 @@ class DBManager: NSObject {
     }
     
     func newLocation()->Location!{
-        let newLocation: Location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext!) as! Location
+        let newLocation: Location = NSEntityDescription.insertNewObject(forEntityName: "Location", into: managedObjectContext!) as! Location
         return newLocation
     }
 
-    func allLocations()->[Location!]{
-        let fetchRequest : NSFetchRequest = NSFetchRequest()
-        fetchRequest.entity = NSEntityDescription.entityForName("Location", inManagedObjectContext: managedObjectContext!)
-        return (try! managedObjectContext!.executeFetchRequest(fetchRequest)) as! [Location!]
+    func allLocations()->[Location?]{
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequest.entity = NSEntityDescription.entity(forEntityName: "Location", in: managedObjectContext!)
+        return (try! managedObjectContext!.fetch(fetchRequest)) as! [Location?]
     }
 }

@@ -17,7 +17,7 @@ class MapInteractor: NSObject {
         super.init()
     }
     
-    func requestTrip(from: String, to: String, sucessClosure:(trip: NSObject)->Void, errorClosure:(error: NSError)->Void){
+    func requestTrip(_ from: String, to: String, sucessClosure:(_ trip: NSObject)->Void, errorClosure:(_ error: NSError)->Void){
         
     }
     

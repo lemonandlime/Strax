@@ -12,7 +12,7 @@ import MapKit
 class MainViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
-    var locations : [Location!] = []
+    var locations : [Location?] = []
     var lineView : LineView?
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class MainViewController: UIViewController, MKMapViewDelegate {
         locations = DBManager.sharedInstance.allLocations()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         let annotations = locations.map { (location) -> Annotation in
@@ -34,7 +34,7 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     }
     
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
         
         guard let location = (annotation as? Annotation)?.location else{
             assertionFailure("Annotation must contain location object")
@@ -46,7 +46,7 @@ class MainViewController: UIViewController, MKMapViewDelegate {
             self.lineView?.removeFromSuperview()
             self.lineView = LineView(frame: self.view.frame)
             self.view.addSubview(self.lineView!)
-            self.view.bringSubviewToFront(view)
+            self.view.bringSubview(toFront: view)
         }
         view.didChangeMoveClosure = {(fromPoint, toPoint) in
             self.lineView?.updateLine(fromPoint, toPoint: toPoint)
@@ -65,24 +65,24 @@ class MainViewController: UIViewController, MKMapViewDelegate {
     }
     
     
-    private func highlightViewsContainingPoint(point:CGPoint)->Array<LocationView>{
+    fileprivate func highlightViewsContainingPoint(_ point:CGPoint)->Array<LocationView>{
         
         let subViews = self.mapView.annotations
         
         let array : Array<LocationView> = Array()
         for annotation in  subViews{
-            let object = mapView.viewForAnnotation(annotation)
+            let object = mapView.view(for: annotation)
             if let locationView = object as? LocationView{
-                if CGRectContainsPoint(locationView.frame, point){
-                    UIView.animateWithDuration(0.2, animations: { () -> Void in
-                        locationView.pointImage.highlighted = true
-                        locationView.transform = CGAffineTransformIdentity
+                if locationView.frame.contains(point){
+                    UIView.animate(withDuration: 0.2, animations: { () -> Void in
+                        locationView.pointImage.isHighlighted = true
+                        locationView.transform = CGAffineTransform.identity
                     })
                     
                 }else{
-                    UIView.animateWithDuration(0.2, animations: { () -> Void in
-                        locationView.pointImage.highlighted = false
-                        locationView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+                    UIView.animate(withDuration: 0.2, animations: { () -> Void in
+                        locationView.pointImage.isHighlighted = false
+                        locationView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
                     })
                 }
                 
@@ -92,31 +92,31 @@ class MainViewController: UIViewController, MKMapViewDelegate {
         return array
     }
     
-    private func findTravel(fromPoint:CGPoint, toPoint:CGPoint, successClosure:(travel: Dictionary<String, AnyObject>)->Void){
+    fileprivate func findTravel(_ fromPoint:CGPoint, toPoint:CGPoint, successClosure:(_ travel: Dictionary<String, AnyObject>)->Void){
         guard let from = locationForPoint(fromPoint), let to = locationForPoint(toPoint) else {return}
         
         SLDataProvider.sharedInstance.getTrip(from.id, to: to.id) { (result) -> Void in
             switch result {
-            case .Success(let trips):
+            case .success(let trips):
                 print(NSString(format: "Found and parsed %d trips", trips.count));
-                let alertView = UIAlertController(title: trips.first?.legs.first?.origin.name, message: trips.first?.legs.last?.destination.name, preferredStyle: UIAlertControllerStyle.Alert)
+                let alertView = UIAlertController(title: trips.first?.legs.first?.origin.name, message: trips.first?.legs.last?.destination.name, preferredStyle: .alert)
                 
-                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                    alertView.dismissViewControllerAnimated(true, completion: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                    alertView.dismiss(animated: true, completion: nil)
                     return
                 })
                 alertView.addAction(action)
-                self.presentViewController(alertView, animated: true, completion: nil)
+                self.present(alertView, animated: true, completion: nil)
                 
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
             }
         }
     }
     
-    private func locationForPoint(point:CGPoint)->Location?{
+    fileprivate func locationForPoint(_ point:CGPoint)->Location?{
         return (mapView.annotations
-            .filter{CGRectContainsPoint((mapView.viewForAnnotation($0)?.frame)!, point)}
+            .filter{(mapView.view(for: $0)?.frame)!.contains(point)}
             .first as? Annotation)?
             .location
     }

@@ -10,13 +10,13 @@ import UIKit
 
 class LineView: UIView {
 
-    var fromPoint: CGPoint = CGPointMake(0, 0)
+    var fromPoint: CGPoint = CGPoint(x: 0, y: 0)
     var toPoint: CGPoint?
     
     override init(frame:CGRect)
     {
         super.init(frame:frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         self.clipsToBounds = false
     }
 
@@ -24,26 +24,26 @@ class LineView: UIView {
         super.init(coder: aDecoder)!
     }
     
-    func updateLine(fromPoint: CGPoint, toPoint: CGPoint){
+    func updateLine(_ fromPoint: CGPoint, toPoint: CGPoint){
         self.fromPoint = fromPoint
         self.toPoint = toPoint
         setNeedsDisplay()
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
     drawLineToPoint()
     }
     
-    private func drawLineToPoint(){
+    fileprivate func drawLineToPoint(){
         if let toPoint = self.toPoint{
             let context = UIGraphicsGetCurrentContext()
-            CGContextSaveGState(context)
-            CGContextSetLineWidth(context, 2.0)
-            CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
-            CGContextMoveToPoint(context, fromPoint.x,fromPoint.y);
-            CGContextAddLineToPoint(context, toPoint.x,toPoint.y);
-            CGContextStrokePath(context);
-            CGContextRestoreGState(context);
+            context?.saveGState()
+            context?.setLineWidth(2.0)
+            context?.setStrokeColor(UIColor.black.cgColor)
+            context?.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y));
+            context?.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y));
+            context?.strokePath();
+            context?.restoreGState();
         }
     }
 }

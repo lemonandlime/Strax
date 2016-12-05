@@ -17,11 +17,11 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate, UITextFiel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.userInteractionEnabled = false
+        mapView.isUserInteractionEnabled = false
         mapView.delegate = self
     }
     
-    func addAnnotation(location:Location){
+    func addAnnotation(_ location:Location){
         let point = MKPointAnnotation()
         
         point.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(location.lon), CLLocationDegrees(location.lat))
@@ -30,15 +30,15 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate, UITextFiel
         
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
         let pointView = MKAnnotationView(annotation: annotation, reuseIdentifier: "id")
         pointView.image = UIImage(named: "annotation")
-        pointView.tintColor = UIColor.grayColor()
+        pointView.tintColor = UIColor.gray
         annotationViews.append(pointView)
         return pointView
     }
     
-    func mapView(mapView: MKMapView, didAddAnnotationViews views: [MKAnnotationView]){
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]){
         for view in annotationViews{
             view.removeFromSuperview()
             self.textField.superview!.addSubview(view)
@@ -46,24 +46,24 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate, UITextFiel
     }
 
 
-    @IBAction func search(sender: UITextField) {
+    @IBAction func search(_ sender: UITextField) {
         let provider = SLDataProvider.sharedInstance
         
         provider.getLocation(sender.text!) { (result) -> Void in
             switch result{
-            case .Success(let location):
-                let aLocation = DBManager.sharedInstance.newLocation()
+            case .success(let location):
+                let aLocation = DBManager.sharedInstance.newLocation()!
                 aLocation.setLocationInfo(location as! NSDictionary)
                 DBManager.sharedInstance.saveContext()
                 self.addAnnotation(aLocation)
                 
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
             }
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
     }

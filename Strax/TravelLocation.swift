@@ -12,18 +12,18 @@ protocol BaseLocation{
     var name: String {get}
     var type: String {get}
     var id: String {get}
-    var lon: NSNumber {get}
-    var lat: NSNumber {get}
+    var lon: Double {get}
+    var lat: Double {get}
 }
 
 struct TravelLocation: BaseLocation {
     let name: String
     let type: String
     let id: String
-    let lon: NSNumber
-    let lat: NSNumber
+    let lon: Double
+    let lat: Double
     let routeIdx: String?
-    let date: NSDate
+    let date: Date
     
     
     
@@ -40,14 +40,14 @@ struct TravelLocation: BaseLocation {
         
     }
     
-    private static func dateFrom(dateString: String, timeString: String)->NSDate!{
-        let timeFormatter = NSDateFormatter()
-        let dateFormatter = NSDateFormatter()
+    fileprivate static func dateFrom(_ dateString: String, timeString: String)->Date!{
+        let timeFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm"
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let timeDate = timeFormatter.dateFromString(timeString)
-        let dateDate = dateFormatter.dateFromString(dateString)
+        let timeDate = timeFormatter.date(from: timeString)
+        let dateDate = dateFormatter.date(from: dateString)
         let timeInterval = timeDate?.timeIntervalSince1970
-        return dateDate!.dateByAddingTimeInterval(timeInterval!)
+        return dateDate!.addingTimeInterval(timeInterval!)
     }
 }

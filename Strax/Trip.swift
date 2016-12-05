@@ -33,7 +33,7 @@ enum TravelType : String{
     func verb()->String{
         switch self{
         case .UNKNOWN: return ""
-        case .METRO, .BUS, .TRAIN, TRAM: return "åk"
+        case .METRO, .BUS, .TRAIN, .TRAM: return "åk"
         case .WALK: return "gå"
         }
     }
@@ -65,7 +65,7 @@ struct Leg: BaseLeg{
     let JourneyDetailRef: String?
     let GeometryRef: String
     
-    init(info: Dictionary<String, AnyObject>) {
+    init(info: Dictionary<String, Any>) {
         name                = info["name"] as! String
         type                = TravelType(rawValue: info["type"] as! String)!
         direction           = info["dir"] as? String
@@ -99,14 +99,14 @@ struct Trip: BaseTrip {
     init(info: JSON) {
         
         switch info["LegList"]["Leg"].type {
-        case .Array:
+        case .array:
             let legList = info["LegList"]["Leg"]
-                for var i = 0; i<legList.count; i+=1{
+                for i in 0 ..< legList.count{
                     let newLeg = Leg(info: legList[i].dictionaryObject!)
                     legs.append(newLeg)
                 }
             
-        case .Dictionary:
+        case .dictionary:
             legs.append(Leg(info: info["LegList"]["Leg"].dictionaryObject!))
             
         default:
