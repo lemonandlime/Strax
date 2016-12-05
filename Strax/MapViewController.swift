@@ -17,6 +17,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var lineView : LineView?
     let clusterManager = FBClusteringManager()
     let locationManager = CLLocationManager()
+    var lastTrip = Array<Trip>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 self.lineView?.removeFromSuperview()
                 self.lineView = LineView(frame: self.view.frame)
                 self.view.addSubview(self.lineView!)
-                self.view.bringSubview(toFront: view)
+                //self.view.bringSubviewToFront(view)
             }
             view.didChangeMoveClosure = {(fromPoint, toPoint) in
                 self.lineView?.updateLine(fromPoint, toPoint: toPoint)
@@ -112,15 +113,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         SLDataProvider.sharedInstance.getTrip(from.id, to: to.id) { (result) -> Void in
             switch result {
             case .success(let trips):
+                self.lastTrip = trips
                 print(NSString(format: "Found and parsed %d trips", trips.count));
-                let alertView = UIAlertController(title: trips.first?.legs.first?.origin.name, message: trips.first?.legs.last?.destination.name, preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                    alertView.dismiss(animated: true, completion: nil)
-                    return
-                })
-                alertView.addAction(action)
-                self.present(alertView, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "Trip Details", sender: nil)
                 
             case .failure(let error):
                 print(error)
@@ -128,9 +123,20 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier! {
+        case "Trip Details":
+            (segue.destination as! TripViewController).trips = lastTrip
+            break
+        default:
+            break
+        }
+    }
+    
     private func locationForPoint(point:CGPoint)->Location?{
         return (mapView.annotations
             .filter{(mapView.view(for: $0)?.frame)!.contains(point)}
+            .filter{$0 is Annotation}
             .first as? Annotation)?
             .location
     }

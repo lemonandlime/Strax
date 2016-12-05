@@ -13,6 +13,8 @@
 		0F8F08381DF61D1A00307C02 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC481DF60E8C00E1E4E7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0F8F083B1DF6219000307C02 /* FBAnnotationClustering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */; };
 		0F8F083C1DF6219000307C02 /* FBAnnotationClustering.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0F94EDB61DF6298200EAF27B /* TripRouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94EDB41DF6298200EAF27B /* TripRouteViewModel.swift */; };
+		0F94EDB71DF6298200EAF27B /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94EDB51DF6298200EAF27B /* TripViewController.swift */; };
 		0FF7FC451DF608FD00E1E4E7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 0FF7FC441DF608FD00E1E4E7 /* Cartfile */; };
 		4525B97A1BC1607600FC03DC /* AnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */; };
 		4525B97C1BC1625100FC03DC /* AnnotationClusterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAnnotationClustering.framework; path = Carthage/Build/iOS/FBAnnotationClustering.framework; sourceTree = "<group>"; };
+		0F94EDB41DF6298200EAF27B /* TripRouteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripRouteViewModel.swift; sourceTree = "<group>"; };
+		0F94EDB51DF6298200EAF27B /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		0FF7FC421DF608A700E1E4E7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		0FF7FC441DF608FD00E1E4E7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F94EDB31DF6295A00EAF27B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0F94EDB41DF6298200EAF27B /* TripRouteViewModel.swift */,
+				0F94EDB51DF6298200EAF27B /* TripViewController.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		0FF7FC461DF60E8C00E1E4E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +211,7 @@
 				DFA6A7DA1BB341440052F7D7 /* API */,
 				DFA6A7DB1BB341600052F7D7 /* Database */,
 				DFA6A7C41BB340710052F7D7 /* Models */,
+				0F94EDB31DF6295A00EAF27B /* Detail */,
 				DFA6A7D91BB340CE0052F7D7 /* Map */,
 				45CCAE1B1BC1A4A5003039F8 /* Supporting Files */,
 			);
@@ -286,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA6A7C11BB340500052F7D7 /* DBManager.swift in Sources */,
+				0F94EDB71DF6298200EAF27B /* TripViewController.swift in Sources */,
 				DFA6A7D71BB340C90052F7D7 /* AnnotationView.swift in Sources */,
 				DFE34D4A1BB3362F00096025 /* Strax.xcdatamodeld in Sources */,
 				DFA6A7BD1BB340300052F7D7 /* SLDataProvider.swift in Sources */,
@@ -298,6 +313,7 @@
 				DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */,
 				DFA6A7CC1BB340950052F7D7 /* MapViewController.swift in Sources */,
 				DFA6A7CD1BB340950052F7D7 /* AddLocationViewController.swift in Sources */,
+				0F94EDB61DF6298200EAF27B /* TripRouteViewModel.swift in Sources */,
 				DFA6A7C81BB3407D0052F7D7 /* TravelLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
