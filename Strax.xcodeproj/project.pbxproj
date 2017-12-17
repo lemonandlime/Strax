@@ -20,6 +20,7 @@
 		0FACA0931FE5EA0A00522539 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FACA08E1FE5E9EE00522539 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0FACA0951FE5EA5300522539 /* StraxRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FACA0941FE5EA5300522539 /* StraxRealm.swift */; };
 		0FACA0981FE5F4C700522539 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FACA0971FE5F4C700522539 /* RealmExtensions.swift */; };
+		0FACA09A1FE6F95900522539 /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FACA0991FE6F95900522539 /* RealmObject.swift */; };
 		0FF7FC451DF608FD00E1E4E7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 0FF7FC441DF608FD00E1E4E7 /* Cartfile */; };
 		4525B97A1BC1607600FC03DC /* AnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */; };
 		4525B97C1BC1625100FC03DC /* AnnotationClusterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */; };
@@ -65,6 +66,7 @@
 		0FACA08E1FE5E9EE00522539 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		0FACA0941FE5EA5300522539 /* StraxRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraxRealm.swift; sourceTree = "<group>"; };
 		0FACA0971FE5F4C700522539 /* RealmExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
+		0FACA0991FE6F95900522539 /* RealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
 		0FF7FC441DF608FD00E1E4E7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationClusterView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				0FACA0941FE5EA5300522539 /* StraxRealm.swift */,
 				0FACA0971FE5F4C700522539 /* RealmExtensions.swift */,
+				0FACA0991FE6F95900522539 /* RealmObject.swift */,
 			);
 			name = Realm;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				0F94EDB71DF6298200EAF27B /* TripViewController.swift in Sources */,
 				DFA6A7D71BB340C90052F7D7 /* AnnotationView.swift in Sources */,
+				0FACA09A1FE6F95900522539 /* RealmObject.swift in Sources */,
 				DFA6A7BD1BB340300052F7D7 /* SLDataProvider.swift in Sources */,
 				4525B97A1BC1607600FC03DC /* AnnotationClusterView.swift in Sources */,
 				0FACA0981FE5F4C700522539 /* RealmExtensions.swift in Sources */,
