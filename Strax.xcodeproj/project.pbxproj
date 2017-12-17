@@ -19,6 +19,7 @@
 		0FACA0921FE5EA0A00522539 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FACA08E1FE5E9EE00522539 /* Realm.framework */; };
 		0FACA0931FE5EA0A00522539 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FACA08E1FE5E9EE00522539 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0FACA0951FE5EA5300522539 /* StraxRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FACA0941FE5EA5300522539 /* StraxRealm.swift */; };
+		0FACA0981FE5F4C700522539 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FACA0971FE5F4C700522539 /* RealmExtensions.swift */; };
 		0FF7FC451DF608FD00E1E4E7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 0FF7FC441DF608FD00E1E4E7 /* Cartfile */; };
 		4525B97A1BC1607600FC03DC /* AnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */; };
 		4525B97C1BC1625100FC03DC /* AnnotationClusterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */; };
@@ -65,6 +66,7 @@
 		0FACA08C1FE5E9D100522539 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		0FACA08E1FE5E9EE00522539 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		0FACA0941FE5EA5300522539 /* StraxRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraxRealm.swift; sourceTree = "<group>"; };
+		0FACA0971FE5F4C700522539 /* RealmExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
 		0FF7FC421DF608A700E1E4E7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		0FF7FC441DF608FD00E1E4E7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -116,6 +118,15 @@
 				0F94EDB51DF6298200EAF27B /* TripViewController.swift */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		0FACA0961FE5F4A600522539 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				0FACA0941FE5EA5300522539 /* StraxRealm.swift */,
+				0FACA0971FE5F4C700522539 /* RealmExtensions.swift */,
+			);
+			name = Realm;
 			sourceTree = "<group>";
 		};
 		0FF7FC461DF60E8C00E1E4E7 /* Frameworks */ = {
@@ -184,10 +195,10 @@
 		DFA6A7DB1BB341600052F7D7 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				0FACA0961FE5F4A600522539 /* Realm */,
 				DFE34D481BB3362F00096025 /* Strax.xcdatamodeld */,
 				DFA6A7C21BB3405C0052F7D7 /* Location.swift */,
 				DFA6A7C01BB340500052F7D7 /* DBManager.swift */,
-				0FACA0941FE5EA5300522539 /* StraxRealm.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -313,6 +324,7 @@
 				DFE34D4A1BB3362F00096025 /* Strax.xcdatamodeld in Sources */,
 				DFA6A7BD1BB340300052F7D7 /* SLDataProvider.swift in Sources */,
 				4525B97A1BC1607600FC03DC /* AnnotationClusterView.swift in Sources */,
+				0FACA0981FE5F4C700522539 /* RealmExtensions.swift in Sources */,
 				4548EAB31BB49D7000A15921 /* Annotation.swift in Sources */,
 				DFE34D421BB3362F00096025 /* AppDelegate.swift in Sources */,
 				DFA6A7C31BB3405C0052F7D7 /* Location.swift in Sources */,

@@ -79,15 +79,4 @@ class DBManager: NSObject {
             }
         }
     }
-
-    func newLocation() -> Location! {
-        let newLocation: Location = NSEntityDescription.insertNewObject(forEntityName: "Location", into: managedObjectContext!) as! Location
-        return newLocation
-    }
-
-    func allLocations() -> [Location?] {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
-        fetchRequest.entity = NSEntityDescription.entity(forEntityName: "Location", in: managedObjectContext!)
-        return (try! managedObjectContext!.fetch(fetchRequest)) as! [Location?]
-    }
 }

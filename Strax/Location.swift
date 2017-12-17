@@ -20,11 +20,11 @@ class Location: Object, BaseLocation {
         case lon = "Y"
     }
 
-    var name: String = ""
-    var id: String = ""
-    var type: String = ""
-    var lon: Double = 0
-    var lat: Double = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var id: String = ""
+    @objc dynamic var type: String = ""
+    @objc dynamic var lon: Double = 0
+    @objc dynamic var lat: Double = 0
     
     override class func primaryKey() -> String? {
         return "id"
@@ -55,5 +55,9 @@ class Location: Object, BaseLocation {
         } catch {
             print(error)
         }
+    }
+    
+    static func all() -> [Location] {
+        return Realm.instance().objects(Location.self).array(type: Location.self)
     }
 }

@@ -14,7 +14,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var mapView: MKMapView!
     var locations: [Location?] = []
     var lineView: LineView?
-//    let clusterManager = FBClusteringManager()
     let locationManager = CLLocationManager()
     var lastTrip = Array<Trip>()
 
@@ -22,18 +21,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         locationManager.requestAlwaysAuthorization()
         mapView.delegate = self
-        locations = DBManager.sharedInstance.allLocations()
+        locations = Location.all()
         let annotations = locations.map { (location) -> Annotation in
             let annotation = Annotation()
             annotation.location = location
             return annotation
         }
-//        clusterManager.addAnnotations(annotations)
+        mapView.addAnnotations(annotations)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        mapView.showAnnotations(clusterManager.allAnnotations() as! [MKAnnotation], animated: false)
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
