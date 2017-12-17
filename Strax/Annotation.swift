@@ -14,9 +14,9 @@ class Annotation: MKPointAnnotation {
         case poi
         case cluster
     }
-    
-    var location: Location?{
-        didSet{
+
+    var location: Location? {
+        didSet {
             self.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(location!.lon), CLLocationDegrees(location!.lat))
         }
     }

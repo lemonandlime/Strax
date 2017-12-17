@@ -12,29 +12,29 @@ import CoreData
 private let _DBManagerSharedInstance = DBManager()
 
 class DBManager: NSObject {
-    
-    class var sharedInstance : DBManager {
+
+    class var sharedInstance: DBManager {
         return _DBManagerSharedInstance
     }
-    
-    override init(){
+
+    override init() {
         super.init()
     }
-    
+
     lazy var applicationDocumentsDirectory: URL = {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return urls[urls.count-1] as URL
-        }()
-    
+        return urls[urls.count - 1] as URL
+    }()
+
     lazy var managedObjectModel: NSManagedObjectModel = {
         let modelURL = Bundle.main.url(forResource: "Strax", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
-        }()
-    
+    }()
+
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.appendingPathComponent("Strax")
-        var error: NSError? = nil
+        var error: NSError?
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             try coordinator!.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
@@ -51,10 +51,10 @@ class DBManager: NSObject {
         } catch {
             fatalError()
         }
-        
+
         return coordinator
-        }()
-    
+    }()
+
     lazy var managedObjectContext: NSManagedObjectContext? = {
         let coordinator = self.persistentStoreCoordinator
         if coordinator == nil {
@@ -63,30 +63,29 @@ class DBManager: NSObject {
         var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
-        }()
-    
-    
-    func saveContext () {
+    }()
+
+    func saveContext() {
         if let moc = self.managedObjectContext {
-            if moc.hasChanges{
-                do{
+            if moc.hasChanges {
+                do {
                     try moc.save()
-                } catch let error as NSError{
+                } catch let error as NSError {
                     NSLog("Unresolved error \(error), \(error.userInfo)")
                     abort()
-                }catch{
+                } catch {
                     abort()
                 }
             }
         }
     }
-    
-    func newLocation()->Location!{
+
+    func newLocation() -> Location! {
         let newLocation: Location = NSEntityDescription.insertNewObject(forEntityName: "Location", into: managedObjectContext!) as! Location
         return newLocation
     }
 
-    func allLocations()->[Location?]{
+    func allLocations() -> [Location?] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
         fetchRequest.entity = NSEntityDescription.entity(forEntityName: "Location", in: managedObjectContext!)
         return (try! managedObjectContext!.fetch(fetchRequest)) as! [Location?]

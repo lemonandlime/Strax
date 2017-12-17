@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol BaseLocation{
-    var name: String {get}
-    var type: String {get}
-    var id: String {get}
-    var lon: Double {get}
-    var lat: Double {get}
+protocol BaseLocation {
+    var name: String { get }
+    var type: String { get }
+    var id: String { get }
+    var lon: Double { get }
+    var lat: Double { get }
 }
 
 struct TravelLocation: BaseLocation {
@@ -26,25 +26,21 @@ struct TravelLocation: BaseLocation {
     let date: Date
     let dateString: String
     let timeString: String
-    
-    
-    
-    
+
     init(info: Dictionary<String, String>) {
-        
-        name    = info["name"]!
-        type    = info["type"]!
-        id      = info["id"]!
-        lon     = NSString(string: info["lon"]!).doubleValue
-        lat     = NSString(string: info["lat"]!).doubleValue
+
+        name = info["name"]!
+        type = info["type"]!
+        id = info["id"]!
+        lon = NSString(string: info["lon"]!).doubleValue
+        lat = NSString(string: info["lat"]!).doubleValue
         routeIdx = info["routeIdx"]
         dateString = info["date"]!
         timeString = info["time"]!
         date = TravelLocation.dateFrom(dateString, timeString: timeString)
-        
     }
-    
-    fileprivate static func dateFrom(_ dateString: String, timeString: String)->Date!{
+
+    fileprivate static func dateFrom(_ dateString: String, timeString: String) -> Date! {
         let timeFormatter = DateFormatter()
         let dateFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm"

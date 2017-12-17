@@ -7,53 +7,51 @@
 //
 
 import UIKit
-import SwiftyJSON
 
-enum TravelType : String{
-    
-    case UNKNOWN = "UNKNOWN"
-    case METRO = "METRO"
-    case BUS = "BUS"
-    case TRAIN = "TRAIN"
-    case TRAM = "TRAM"
+enum TravelType: String {
 
-    case WALK = "WALK"
-    
-    func name()->String{
-        switch self{
-        case .UNKNOWN:  return ""
-        case .METRO:    return "Tunnelbana"
-        case .BUS:      return "Buss"
-        case .TRAIN:    return "Tåg"
-        case .TRAM:     return "Spårvagn"
-        case .WALK:     return "Promenad"
+    case UNKNOWN
+    case METRO
+    case BUS
+    case TRAIN
+    case TRAM
+
+    case WALK
+
+    func name() -> String {
+        switch self {
+        case .UNKNOWN: return ""
+        case .METRO: return "Tunnelbana"
+        case .BUS: return "Buss"
+        case .TRAIN: return "Tåg"
+        case .TRAM: return "Spårvagn"
+        case .WALK: return "Promenad"
         }
     }
-    
-    func verb()->String{
-        switch self{
+
+    func verb() -> String {
+        switch self {
         case .UNKNOWN: return ""
         case .METRO, .BUS, .TRAIN, .TRAM: return "åk"
         case .WALK: return "gå"
         }
     }
-    
 }
 
-protocol BaseLeg{
-    var name: String {get}
-    var type: TravelType {get}
-    var direction: String? {get}
-    var line: String? {get}
-    var hide: Bool {get}
-    var distance: String? {get}
-    var origin: TravelLocation {get}
-    var destination: TravelLocation {get}
-    var JourneyDetailRef: String? {get}
-    var GeometryRef: String {get}
+protocol BaseLeg {
+    var name: String { get }
+    var type: TravelType { get }
+    var direction: String? { get }
+    var line: String? { get }
+    var hide: Bool { get }
+    var distance: String? { get }
+    var origin: TravelLocation { get }
+    var destination: TravelLocation { get }
+    var JourneyDetailRef: String? { get }
+    var GeometryRef: String { get }
 }
 
-struct Leg: BaseLeg{
+struct Leg: BaseLeg {
     let name: String
     let type: TravelType
     let direction: String?
@@ -64,58 +62,66 @@ struct Leg: BaseLeg{
     let destination: TravelLocation
     let JourneyDetailRef: String?
     let GeometryRef: String
-    
+
     init(info: Dictionary<String, Any>) {
-        name                = info["name"] as! String
-        type                = TravelType(rawValue: info["type"] as! String)!
-        direction           = info["dir"] as? String
-        line                = info["line"] as? String
-        hide                = info["hide"] as? String == "true"
-        distance            = info["dist"] as? String
-        origin              = TravelLocation(info: info["Origin"] as! Dictionary<String, String>)
-        destination         = TravelLocation(info: info["Destination"] as! Dictionary<String, String>)
-        GeometryRef         = (info["GeometryRef"] as! Dictionary<String, String>)["ref"]!
-        
-        if let journeyDetail = info["JourneyDetailRef"] as? Dictionary<String, String>{
+        name = info["name"] as! String
+        type = TravelType(rawValue: info["type"] as! String)!
+        direction = info["dir"] as? String
+        line = info["line"] as? String
+        hide = info["hide"] as? String == "true"
+        distance = info["dist"] as? String
+        origin = TravelLocation(info: info["Origin"] as! Dictionary<String, String>)
+        destination = TravelLocation(info: info["Destination"] as! Dictionary<String, String>)
+        GeometryRef = (info["GeometryRef"] as! Dictionary<String, String>)["ref"]!
+
+        if let journeyDetail = info["JourneyDetailRef"] as? Dictionary<String, String> {
             JourneyDetailRef = journeyDetail["ref"]
-        }else{
+        } else {
             JourneyDetailRef = nil
         }
     }
 }
 
-protocol BaseTrip{
-    var duration: String {get}
-    var numberOfChanges: String {get}
-    var legs: Array<BaseLeg> {get}
+protocol BaseTrip {
+    var duration: String { get }
+    var numberOfChanges: String { get }
+    var legs: Array<BaseLeg> { get }
 }
 
-struct Trip: BaseTrip {
-    
+struct Trip: BaseTrip, Codable {
+
     let duration: String
     let numberOfChanges: String
     var legs: Array<BaseLeg> = Array<BaseLeg>()
 
-    init(info: JSON) {
-        
-        switch info["LegList"]["Leg"].type {
-        case .array:
-            let legList = info["LegList"]["Leg"]
-                for i in 0 ..< legList.count{
-                    let newLeg = Leg(info: legList[i].dictionaryObject!)
-                    legs.append(newLeg)
-                }
-            
-        case .dictionary:
-            legs.append(Leg(info: info["LegList"]["Leg"].dictionaryObject!))
-            
-        default:
-            legs = Array<BaseLeg>()
-        }
-        
-        duration            = info["dur"].stringValue
-        numberOfChanges     = info["chg"].stringValue
+//    init(info: Data) {
+//        let decoder = JSONDecoder()
+//        let beer = try! decoder.decode(Trip.self, from: info)
+//        switch info["LegList"]["Leg"].type {
+//        case .array:
+//            let legList = info["LegList"]["Leg"]
+//            for i in 0 ..< legList.count {
+//                let newLeg = Leg(info: legList[i].dictionaryObject!)
+//                legs.append(newLeg)
+//            }
+//
+//        case .dictionary:
+//            legs.append(Leg(info: info["LegList"]["Leg"].dictionaryObject!))
+//
+//        default:
+//            legs = Array<BaseLeg>()
+//        }
+//
+//        duration = info["dur"].stringValue
+//        numberOfChanges = info["chg"].stringValue
+//    }
+    
+    public init(from decoder: Decoder) throws {
+        throw(NSError())
+    }
+    public func encode(to encoder: Encoder) throws {
         
     }
+
     
 }

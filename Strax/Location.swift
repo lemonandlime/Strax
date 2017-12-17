@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import CoreData
+import RealmSwift
 
-@objc (Location)
-class Location: NSManagedObject, BaseLocation {
-    
-    enum key : String {
+@objc(Location)
+class Location: Object, BaseLocation {
+
+    enum key: String {
         case name = "Name"
         case id = "SiteId"
         case type = "Type"
@@ -20,23 +20,40 @@ class Location: NSManagedObject, BaseLocation {
         case lon = "Y"
     }
 
-    @NSManaged var name: String
-    @NSManaged var id: String
-    @NSManaged var type: String
-    @NSManaged var lon: Double
-    @NSManaged var lat: Double
+    var name: String = ""
+    var id: String = ""
+    var type: String = ""
+    var lon: Double = 0
+    var lat: Double = 0
     
-    func setLocationInfo(_ info:[String: Any]){
-        name = info["Name"] as! String
-        id = info["SiteId"] as! String
-        type = info["Type"] as! String
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+    
+    convenience init(data: SearchLocationResponseModel) {
+        self.init()
+        let locationResponse = data.ResponseData.first!
         
-        var xValue = info[key.lat.rawValue] as! String
-        xValue.insert(".", at: xValue.characters.index(xValue.startIndex, offsetBy: 2))
-        lat = NSString(string:xValue).doubleValue
+        name = locationResponse.Name
+        id = locationResponse.SiteId
+        type = ""
+        var xValue = locationResponse.X
+        xValue.insert(".", at: xValue.index(xValue.startIndex, offsetBy: 2))
+        lat = NSString(string: xValue).doubleValue
         
-        var yValue = info[key.lon.rawValue] as! String
-        yValue.insert(".", at: yValue.characters.index(yValue.startIndex, offsetBy: 2))
-        lon = NSString(string:yValue).doubleValue
+        var yValue = locationResponse.Y
+        yValue.insert(".", at: yValue.index(yValue.startIndex, offsetBy: 2))
+        lon = NSString(string: yValue).doubleValue
+    }
+    
+    func save() {
+        let realm = Realm.instance()
+        do {
+            try realm.write {
+                realm.add(self, update: true)
+            }
+        } catch {
+            print(error)
+        }
     }
 }

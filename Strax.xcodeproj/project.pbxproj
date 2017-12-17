@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		0F8F08351DF61D1A00307C02 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */; };
 		0F8F08361DF61D1A00307C02 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0F8F08371DF61D1A00307C02 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC481DF60E8C00E1E4E7 /* SwiftyJSON.framework */; };
-		0F8F08381DF61D1A00307C02 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC481DF60E8C00E1E4E7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0F8F083B1DF6219000307C02 /* FBAnnotationClustering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */; };
-		0F8F083C1DF6219000307C02 /* FBAnnotationClustering.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0F94EDB61DF6298200EAF27B /* TripRouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94EDB41DF6298200EAF27B /* TripRouteViewModel.swift */; };
 		0F94EDB71DF6298200EAF27B /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94EDB51DF6298200EAF27B /* TripViewController.swift */; };
+		0FACA08B1FE5E03900522539 /* SearchLocationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FACA08A1FE5E03900522539 /* SearchLocationResponseModel.swift */; };
+		0FACA08D1FE5E9D100522539 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FACA08C1FE5E9D100522539 /* RealmSwift.framework */; };
+		0FACA08F1FE5E9EE00522539 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FACA08E1FE5E9EE00522539 /* Realm.framework */; };
+		0FACA0901FE5EA0500522539 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FACA08C1FE5E9D100522539 /* RealmSwift.framework */; };
+		0FACA0911FE5EA0500522539 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FACA08C1FE5E9D100522539 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0FACA0921FE5EA0A00522539 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FACA08E1FE5E9EE00522539 /* Realm.framework */; };
+		0FACA0931FE5EA0A00522539 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FACA08E1FE5E9EE00522539 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0FACA0951FE5EA5300522539 /* StraxRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FACA0941FE5EA5300522539 /* StraxRealm.swift */; };
 		0FF7FC451DF608FD00E1E4E7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 0FF7FC441DF608FD00E1E4E7 /* Cartfile */; };
 		4525B97A1BC1607600FC03DC /* AnnotationClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */; };
 		4525B97C1BC1625100FC03DC /* AnnotationClusterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */; };
@@ -45,8 +49,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0F8F083C1DF6219000307C02 /* FBAnnotationClustering.framework in Embed Frameworks */,
-				0F8F08381DF61D1A00307C02 /* SwiftyJSON.framework in Embed Frameworks */,
+				0FACA0931FE5EA0A00522539 /* Realm.framework in Embed Frameworks */,
+				0FACA0911FE5EA0500522539 /* RealmSwift.framework in Embed Frameworks */,
 				0F8F08361DF61D1A00307C02 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -55,17 +59,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBAnnotationClustering.framework; path = Carthage/Build/iOS/FBAnnotationClustering.framework; sourceTree = "<group>"; };
 		0F94EDB41DF6298200EAF27B /* TripRouteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripRouteViewModel.swift; sourceTree = "<group>"; };
 		0F94EDB51DF6298200EAF27B /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		0FACA08A1FE5E03900522539 /* SearchLocationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationResponseModel.swift; sourceTree = "<group>"; };
+		0FACA08C1FE5E9D100522539 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		0FACA08E1FE5E9EE00522539 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		0FACA0941FE5EA5300522539 /* StraxRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraxRealm.swift; sourceTree = "<group>"; };
 		0FF7FC421DF608A700E1E4E7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		0FF7FC441DF608FD00E1E4E7 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		0FF7FC481DF60E8C00E1E4E7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		4525B9791BC1607600FC03DC /* AnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationClusterView.swift; sourceTree = "<group>"; };
 		4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationClusterView.xib; sourceTree = "<group>"; };
 		4548EAB21BB49D7000A15921 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
-		4548EAB41BB4B1F500A15921 /* Strax-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Strax-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		45CCAE161BC19E10003039F8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDataProvider.swift; sourceTree = "<group>"; };
 		DFA6A7C01BB340500052F7D7 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -92,10 +97,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F8F08371DF61D1A00307C02 /* SwiftyJSON.framework in Frameworks */,
+				0FACA0921FE5EA0A00522539 /* Realm.framework in Frameworks */,
+				0FACA08F1FE5E9EE00522539 /* Realm.framework in Frameworks */,
+				0FACA0901FE5EA0500522539 /* RealmSwift.framework in Frameworks */,
 				0F8F08351DF61D1A00307C02 /* Alamofire.framework in Frameworks */,
-				0F8F083B1DF6219000307C02 /* FBAnnotationClustering.framework in Frameworks */,
 				45CCAE171BC19E10003039F8 /* MapKit.framework in Frameworks */,
+				0FACA08D1FE5E9D100522539 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,9 +121,9 @@
 		0FF7FC461DF60E8C00E1E4E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0F8F083A1DF6219000307C02 /* FBAnnotationClustering.framework */,
+				0FACA08E1FE5E9EE00522539 /* Realm.framework */,
+				0FACA08C1FE5E9D100522539 /* RealmSwift.framework */,
 				0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */,
-				0FF7FC481DF60E8C00E1E4E7 /* SwiftyJSON.framework */,
 				45CCAE161BC19E10003039F8 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -140,7 +147,6 @@
 				DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */,
 				DFE34D501BB3362F00096025 /* Info.plist */,
 				DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */,
-				4548EAB41BB4B1F500A15921 /* Strax-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */,
+				0FACA08A1FE5E03900522539 /* SearchLocationResponseModel.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 				DFE34D481BB3362F00096025 /* Strax.xcdatamodeld */,
 				DFA6A7C21BB3405C0052F7D7 /* Location.swift */,
 				DFA6A7C01BB340500052F7D7 /* DBManager.swift */,
+				0FACA0941FE5EA5300522539 /* StraxRealm.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -245,13 +253,13 @@
 		DFE34D361BB3362F00096025 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = LemonandLime;
 				TargetAttributes = {
 					DFE34D3D1BB3362F00096025 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = N856DL6EH7;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0920;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -313,6 +321,8 @@
 				DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */,
 				DFA6A7CC1BB340950052F7D7 /* MapViewController.swift in Sources */,
 				DFA6A7CD1BB340950052F7D7 /* AddLocationViewController.swift in Sources */,
+				0FACA0951FE5EA5300522539 /* StraxRealm.swift in Sources */,
+				0FACA08B1FE5E03900522539 /* SearchLocationResponseModel.swift in Sources */,
 				0F94EDB61DF6298200EAF27B /* TripRouteViewModel.swift in Sources */,
 				DFA6A7C81BB3407D0052F7D7 /* TravelLocation.swift in Sources */,
 			);
@@ -329,14 +339,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -377,14 +393,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -424,11 +446,12 @@
 				);
 				INFOPLIST_FILE = Strax/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.Strax;
+				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxSL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Strax-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -445,10 +468,11 @@
 				);
 				INFOPLIST_FILE = Strax/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.Strax;
+				PRODUCT_BUNDLE_IDENTIFIER = se.lemonandlime.StraxSL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Strax-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

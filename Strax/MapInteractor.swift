@@ -9,16 +9,14 @@
 import UIKit
 
 class MapInteractor: NSObject {
-   
+
     let provider: NSObject
-    
+
     required init(provider: NSObject) {
         self.provider = provider
         super.init()
     }
-    
-    func requestTrip(_ from: String, to: String, sucessClosure:(_ trip: NSObject)->Void, errorClosure:(_ error: NSError)->Void){
-        
+
+    func requestTrip(_: String, to _: String, sucessClosure _: (_ trip: NSObject) -> Void, errorClosure _: (_ error: NSError) -> Void) {
     }
-    
 }
