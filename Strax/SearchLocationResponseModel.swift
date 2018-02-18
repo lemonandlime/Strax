@@ -15,10 +15,18 @@ struct SearchLocationResponseModel: Codable {
 }
 
 struct LocationResponseModel: Codable {
-    let Name: String
-    let SiteId: String
-    let X: String
-    let Y: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "Name"
+        case id = "SiteId"
+        case lat = "X"
+        case lon = "Y"
+    }
+    
+    let name: String
+    let id: String
+    let lat: String
+    let lon: String
 }
 
 //{

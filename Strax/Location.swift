@@ -8,9 +8,9 @@
 
 import Foundation
 import RealmSwift
+import MapKit
 
-@objc(Location)
-class Location: Object, BaseLocation {
+final class Location: RealmObject, BaseLocation {
 
     enum key: String {
         case name = "Name"
@@ -33,17 +33,16 @@ class Location: Object, BaseLocation {
     convenience init(data: SearchLocationResponseModel) {
         self.init()
         let locationResponse = data.ResponseData.first!
-        
-        name = locationResponse.Name
-        id = locationResponse.SiteId
+        name = locationResponse.name
+        id = locationResponse.id
         type = ""
-        var xValue = locationResponse.X
+        var xValue = locationResponse.lat
         xValue.insert(".", at: xValue.index(xValue.startIndex, offsetBy: 2))
-        lat = NSString(string: xValue).doubleValue
+        lon = NSString(string: xValue).doubleValue
         
-        var yValue = locationResponse.Y
+        var yValue = locationResponse.lon
         yValue.insert(".", at: yValue.index(yValue.startIndex, offsetBy: 2))
-        lon = NSString(string: yValue).doubleValue
+        lat = NSString(string: yValue).doubleValue
     }
     
     func save() {
@@ -54,6 +53,16 @@ class Location: Object, BaseLocation {
             }
         } catch {
             print(error)
+        }
+    }
+    
+    func coordinate() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: lat, longitude: lon)
+    }
+    
+    static var allLocations: Results<Location> {
+        get {
+            return Realm.instance().objects(Location.self)
         }
     }
     

@@ -18,8 +18,8 @@ extension Realm {
                 schemaVersion: 1,
                 migrationBlock: nil)
             // JUST DURING DEVELOPMENT MODE
-            //config.deleteRealmIfMigrationNeeded = true
-            
+            config.deleteRealmIfMigrationNeeded = true
+        
             if true {// FeatureFlags.realmOnDesktop {
                 let fileName = "strax"
                 let path = "\(NSHomeDirectory()[..<(NSHomeDirectory().range(of: "/Library/")!.lowerBound)])/Desktop/\(fileName).realm"

@@ -19,12 +19,12 @@ protocol AnnotationView {
 
 class AnnotationLocationView: MKAnnotationView, AnnotationView {
 
-    class func annotationView(location: Location) -> AnnotationLocationView {
-        let view: AnnotationLocationView = Bundle.main.loadNibNamed("AnnotationLocationView", owner: self, options: nil)!.first as! AnnotationLocationView
-        view.location = location
-        view.titleLabel.text = view.location!.name
-        return view
-    }
+//    class func annotationView(location: Location) -> AnnotationLocationView {
+//        let view: AnnotationLocationView = Bundle.main.loadNibNamed("AnnotationLocationView", owner: self, options: nil)!.first as! AnnotationLocationView
+//        view.location = location
+//        view.titleLabel.text = view.location!.name
+//        return view
+//    }
 
     //    class func annotationView()->AnnotationLocationView{
     //        let view : AnnotationLocationView =  NSBundle.mainBundle().loadNibNamed("AnnotationLocationView", owner: self, options: nil).first as! AnnotationLocationView
@@ -39,6 +39,13 @@ class AnnotationLocationView: MKAnnotationView, AnnotationView {
     var didBeginMoveClosure: ((CGPoint, UIView) -> Void)?
     var didChangeMoveClosure: ((CGPoint, CGPoint) -> Void)?
     var didEndMoveClosure: ((CGPoint, CGPoint) -> Void)?
+    
+    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        if let annotation = annotation as? Annotation {
+            location = annotation.location
+        }
+    }
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
