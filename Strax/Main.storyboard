@@ -5,10 +5,11 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller New-->
+        <!--MapVC-->
         <scene sceneID="55H-AC-vfn">
             <objects>
                 <viewController id="kDE-qU-LM4" customClass="MapVC" customModule="Strax" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,12 +71,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jN1-By-B8K">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <color key="backgroundColor" red="0.90588235289999997" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="polar"/>
                             </view>
                             <searchBar contentMode="redraw" placeholder="Sök efter address" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UA-FT-m4y">
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
                                 <color key="tintColor" red="0.1647058824" green="0.37647058820000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="0.90588235289999997" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" name="polar"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="search" enablesReturnKeyAutomatically="YES" textContentType="location"/>
                                 <connections>
                                     <outlet property="delegate" destination="VLX-oG-mD8" id="3Td-V7-A7I"/>
@@ -315,6 +316,9 @@
     <resources>
         <image name="Menu Point" width="72" height="72"/>
         <image name="Search Point" width="72" height="72"/>
+        <namedColor name="polar">
+            <color red="0.90600001811981201" green="0.98000001907348633" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
-    <color key="tintColor" red="0.1647058824" green="0.37647058820000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" name="dark-midnight-blue"/>
 </document>
