@@ -3,13 +3,18 @@
 // Copyright (c) 2018 LemonandLime. All rights reserved.
 //
 
-import MapKit.MKMapView
+import MapKit
+import UIKit
+import Foundation
+
+private let defaultInset = UIEdgeInsets(top: 100, left: 40, bottom: 100, right: 40)
 
 extension MKMapView {
-    func zoomToAnnotations() {
-        let newMapRect = mapRect(for: annotations)
+
+    func zoomToAnnotations(_ annotations: [MKAnnotation]? = nil, inset: UIEdgeInsets = defaultInset) {
+        let newMapRect = mapRect(for: annotations ?? self.annotations)
         if !MKMapRectIsNull(newMapRect) {
-            setVisibleMapRect(newMapRect, edgePadding: UIEdgeInsets(top: 100, left: 40, bottom: 100, right: 40), animated: true)
+            setVisibleMapRect(newMapRect, edgePadding: inset, animated: true)
         }
     }
 
