@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebbcab64-9738-4efc-90fc-62e59ed511ad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Strax/AddLocationViewController.swift" afterPath="$PROJECT_DIR$/Strax/AddLocationViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Strax/Assets.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/Strax/Assets.xcassets/AppIcon.appiconset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Strax/Location.swift" afterPath="$PROJECT_DIR$/Strax/Location.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Strax/Main.storyboard" afterPath="$PROJECT_DIR$/Strax/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Strax/SearchLocationResponseModel.swift" afterPath="$PROJECT_DIR$/Strax/SearchLocationResponseModel.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Strax/SearchVC.swift" afterPath="$PROJECT_DIR$/Strax/SearchVC.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -132,12 +127,12 @@
       <option name="presentableId" value="Default" />
       <updated>1519921564758</updated>
       <workItem from="1519921566264" duration="1929000" />
-      <workItem from="1519923844738" duration="386000" />
+      <workItem from="1519923844738" duration="795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2315000" />
+    <option name="totallyTimeSpent" value="2724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
