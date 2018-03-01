@@ -20,7 +20,7 @@ extension Realm {
             // JUST DURING DEVELOPMENT MODE
             config.deleteRealmIfMigrationNeeded = true
         
-            if true {// FeatureFlags.realmOnDesktop {
+            if !isDevice {
                 let fileName = "strax"
                 let path = "\(NSHomeDirectory()[..<(NSHomeDirectory().range(of: "/Library/")!.lowerBound)])/Desktop/\(fileName).realm"
                 config.fileURL = URL(fileURLWithPath: path)
@@ -30,5 +30,13 @@ extension Realm {
         }
         
         return foundRealm
+    }
+    
+    private static var isDevice: Bool {
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            return false
+        #else
+            return true
+        #endif
     }
 }
