@@ -19,12 +19,19 @@ protocol AnnotationView {
 
 class AnnotationLocationView: MKAnnotationView, AnnotationView {
 
-//    class func annotationView(location: Location) -> AnnotationLocationView {
-//        let view: AnnotationLocationView = Bundle.main.loadNibNamed("AnnotationLocationView", owner: self, options: nil)!.first as! AnnotationLocationView
-//        view.location = location
-//        view.titleLabel.text = view.location!.name
-//        return view
-//    }
+    class func annotationView(location: Location) -> AnnotationLocationView {
+        let view: AnnotationLocationView = Bundle.main.loadNibNamed("AnnotationLocationView", owner: self, options: nil)!.first as! AnnotationLocationView
+        view.location = location
+        view.titleLabel.text = view.location!.name
+        return view
+    }
+
+    class func newInstance(annotation: LocationAnnotation) -> AnnotationLocationView {
+        let view: AnnotationLocationView = Bundle.main.loadNibNamed("AnnotationLocationView", owner: self, options: nil)!.first as! AnnotationLocationView
+        view.titleLabel.text = annotation.title
+        return view
+    }
+
 
     //    class func annotationView()->AnnotationLocationView{
     //        let view : AnnotationLocationView =  NSBundle.mainBundle().loadNibNamed("AnnotationLocationView", owner: self, options: nil).first as! AnnotationLocationView
@@ -83,17 +90,17 @@ class AnnotationLocationView: MKAnnotationView, AnnotationView {
         case .began :
             isHighlighted = true
             isTravelOrigin = true
-            didBeginMoveClosure!(self.center, self)
+            didBeginMoveClosure?(self.center, self)
             return
         case .ended, .cancelled :
             isHighlighted = false
             isTravelOrigin = false
             self.isHighlighted = false
-            didEndMoveClosure!(self.center, point)
+            didEndMoveClosure?(self.center, point)
             return
 
         case .changed :
-            didChangeMoveClosure!(self.center, point)
+            didChangeMoveClosure?(self.center, point)
             return
 
         default:

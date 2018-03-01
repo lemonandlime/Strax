@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebbcab64-9738-4efc-90fc-62e59ed511ad" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Strax/extensions/Substring.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Strax/StationAnnotation.swift" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Strax.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Strax.xcodeproj/project.pbxproj" />
-      <change beforePath="$PROJECT_DIR$/Strax/Location.swift" afterPath="$PROJECT_DIR$/Strax/Location.swift" />
+      <change beforePath="$PROJECT_DIR$/Strax/AnnotationView.swift" afterPath="$PROJECT_DIR$/Strax/AnnotationView.swift" />
       <change beforePath="$PROJECT_DIR$/Strax/Main.storyboard" afterPath="$PROJECT_DIR$/Strax/Main.storyboard" />
-      <change beforePath="$PROJECT_DIR$/Strax/SearchVC.swift" afterPath="$PROJECT_DIR$/Strax/SearchVC.swift" />
+      <change beforePath="$PROJECT_DIR$/Strax/MapViewController.swift" afterPath="$PROJECT_DIR$/Strax/MapVC.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +19,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_4041649ea0788d3e7bd0d5bb3a82e0494439eac4" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchVC.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Strax/SearchVC.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="421">
@@ -29,15 +29,78 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapViewController.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Strax/MapViewController.swift">
+      <file leaf-file-name="MapVC.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Strax/MapVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-599">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding>
                 <element signature="e#0#2#0" expanded="false" />
-                <element signature="e#3101#8455#0" expanded="false" />
+                <element signature="e#148#160#0" expanded="true" />
+                <element signature="e#4722#10096#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapKit.MKMapView.swift" pinned="false" current-in-tab="false">
+        <entry file="mock:///MapKit.MKMapView.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="188" column="14" lean-forward="false" selection-start-line="188" selection-start-column="14" selection-end-line="188" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapKit.MKPointAnnotation.swift" pinned="false" current-in-tab="false">
+        <entry file="mock:///MapKit.MKPointAnnotation.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StationAnnotation.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Strax/StationAnnotation.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="9" />
+              <folding>
+                <element signature="e#108#125#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Annotation.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Strax/Annotation.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnnotationClusterView.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Strax/AnnotationClusterView.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnnotationView.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Strax/AnnotationView.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="102" column="33" lean-forward="false" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,6 +136,10 @@
         <option value="$PROJECT_DIR$/Strax/extensions/Substring.swift" />
         <option value="$PROJECT_DIR$/Strax/Location.swift" />
         <option value="$PROJECT_DIR$/Strax/SearchVC.swift" />
+        <option value="$PROJECT_DIR$/Strax/StationMarkerAnnotation.swift" />
+        <option value="$PROJECT_DIR$/Strax/AnnotationView.swift" />
+        <option value="$PROJECT_DIR$/Strax/StationAnnotation.swift" />
+        <option value="$PROJECT_DIR$/Strax/MapVC.swift" />
       </list>
     </option>
   </component>
@@ -83,9 +150,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="33" />
-    <option name="width" value="1680" />
-    <option name="height" value="1028" />
+    <option name="y" value="22" />
+    <option name="width" value="2560" />
+    <option name="height" value="1178" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -119,6 +186,19 @@
               <item name="" type="efc3779f:XcodeRootNode" />
               <item name="Strax" type="1d218c8b:XcodeProjectNode" />
               <item name="Strax" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Strax" type="1d218c8b:XcodeProjectNode" />
+              <item name="Strax" type="fcab9f18:XcodeViewNode" />
+              <item name="Map" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Strax" type="1d218c8b:XcodeProjectNode" />
+              <item name="Strax" type="fcab9f18:XcodeViewNode" />
+              <item name="Map" type="fcab9f18:XcodeViewNode" />
+              <item name="Annotation" type="fcab9f18:XcodeViewNode" />
             </path>
             <path>
               <item name="" type="efc3779f:XcodeRootNode" />
@@ -171,21 +251,22 @@
       <workItem from="1519923844738" duration="990000" />
       <workItem from="1519929214889" duration="1183000" />
       <workItem from="1519930624401" duration="25000" />
-      <workItem from="1519930664279" duration="2890000" />
+      <workItem from="1519930664279" duration="9084000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7017000" />
+    <option name="totallyTimeSpent" value="13211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.50238097" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329" sideWeight="0.50476193" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -255,17 +336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Strax/MapViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-599">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#3101#8455#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Strax/extensions/Substring.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -287,6 +357,52 @@
         <state relative-caret-position="421">
           <caret line="68" column="70" lean-forward="false" selection-start-line="68" selection-start-column="70" selection-end-line="68" selection-end-column="70" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Strax/AnnotationClusterView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Strax/Annotation.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Strax/AnnotationView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="102" column="33" lean-forward="false" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Strax/StationAnnotation.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <element signature="e#108#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Strax/MapVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#2#0" expanded="false" />
+            <element signature="e#148#160#0" expanded="true" />
+            <element signature="e#4722#10096#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
