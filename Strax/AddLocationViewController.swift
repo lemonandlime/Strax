@@ -51,12 +51,12 @@ class AddLocationViewController: UIViewController, MKMapViewDelegate, UITextFiel
         provider.getLocation(sender.text!) { result in
             switch result {
             case .success(let locationModel):
-                let aLocation = Location(data: locationModel)
-                aLocation.save()
+//                let aLocation = Location(data: locationModel)
+//                aLocation.save()
 //                aLocation.setLocationInfo(locationModel)
 //                DBManager.sharedInstance.saveContext()
-                self.addAnnotation(aLocation)
-                
+//                self.addAnnotation(aLocation)
+                break
             case .failure(let error):
                 print(error)
             }

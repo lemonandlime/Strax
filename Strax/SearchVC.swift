@@ -10,45 +10,45 @@ import UIKit
 
 class SearchVC: UIViewController {
     
-    var searchResults = [Location]()
+    var searchResults = [Location]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     var searchController: UISearchController!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSearch()
+        searchBar.becomeFirstResponder()
     }
-    
-    private func setupSearch() {
-        definesPresentationContext = true
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        tableView.tableHeaderView = searchController.searchBar
-    }
-    
 }
 
-extension SearchVC: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+
+extension SearchVC: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text, !searchText.isEmpty {
             search(searchText)
         }
     }
-    
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        dismiss(animated: true)
+    }
+
     private func search(_ string: String) {
         let provider = SLDataProvider.sharedInstance
-        
+
         provider.getLocation(string) { result in
             switch result {
             case .success(let locationModel):
-                let aLocation = Location(data: locationModel)
-                self.searchResults.removeAll()
-                self.searchResults.append(aLocation)
-                self.tableView.reloadData()
-                
+                let locations = Location.createFromResponse(data: locationModel)
+                self.searchResults = locations
+
 //                aLocation.save()
 //                self.dismiss(animated: true, completion: nil)
-                
+
             case .failure(let error):
                 print(error)
             }
@@ -56,7 +56,7 @@ extension SearchVC: UISearchResultsUpdating {
     }
 }
 
-extension SearchVC: UITableViewDataSource {
+extension SearchVC: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,10 +64,13 @@ extension SearchVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = searchResults[indexPath.row].name
         return cell
     }
-    
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchResults[indexPath.row].save()
+        dismiss(animated: true)
+    }
 }

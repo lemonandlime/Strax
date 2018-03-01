@@ -11,7 +11,7 @@ import Foundation
 struct SearchLocationResponseModel: Codable {
     var StatusCode: Int
     var Message: String?
-    var ResponseData: [LocationResponseModel]
+    var ResponseData: [LocationResponseModel]?
 }
 
 struct LocationResponseModel: Codable {

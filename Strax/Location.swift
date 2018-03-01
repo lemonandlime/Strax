@@ -30,20 +30,42 @@ final class Location: RealmObject, BaseLocation {
         return "id"
     }
     
-    convenience init(data: SearchLocationResponseModel) {
+    static func createFromResponse(data: SearchLocationResponseModel) -> Array<Location> {
+        var locationList = Array<Location>()
+        data.ResponseData?.forEach {
+            locationList.append(Location(data: $0))
+        }
+        return locationList
+    }
+    
+    convenience init(data: LocationResponseModel) {
         self.init()
-        let locationResponse = data.ResponseData.first!
-        name = locationResponse.name
-        id = locationResponse.id
+        name = data.name
+        id = data.id
         type = ""
-        var xValue = locationResponse.lat
+        var xValue = data.lat
         xValue.insert(".", at: xValue.index(xValue.startIndex, offsetBy: 2))
         lon = NSString(string: xValue).doubleValue
         
-        var yValue = locationResponse.lon
+        var yValue = data.lon
         yValue.insert(".", at: yValue.index(yValue.startIndex, offsetBy: 2))
         lat = NSString(string: yValue).doubleValue
     }
+    
+//    convenience init(data: SearchLocationResponseModel) {
+//        self.init()
+//        let locationResponse = data.ResponseData!.first!
+//        name = locationResponse.name
+//        id = locationResponse.id
+//        type = ""
+//        var xValue = locationResponse.lat
+//        xValue.insert(".", at: xValue.index(xValue.startIndex, offsetBy: 2))
+//        lon = NSString(string: xValue).doubleValue
+//
+//        var yValue = locationResponse.lon
+//        yValue.insert(".", at: yValue.index(yValue.startIndex, offsetBy: 2))
+//        lat = NSString(string: yValue).doubleValue
+//    }
     
     func save() {
         let realm = Realm.instance()
