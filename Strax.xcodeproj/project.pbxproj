@@ -32,7 +32,6 @@
 		DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C51BB3407D0052F7D7 /* Trip.swift */; };
 		DFA6A7C81BB3407D0052F7D7 /* TravelLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C61BB3407D0052F7D7 /* TravelLocation.swift */; };
 		DFA6A7CC1BB340950052F7D7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C91BB340950052F7D7 /* MapViewController.swift */; };
-		DFA6A7CD1BB340950052F7D7 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */; };
 		DFA6A7CE1BB340950052F7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7CB1BB340950052F7D7 /* Main.storyboard */; };
 		DFA6A7D01BB340A10052F7D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */; };
 		DFA6A7D51BB340C90052F7D7 /* AnnotationLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7D11BB340C80052F7D7 /* AnnotationLocationView.xib */; };
@@ -80,7 +79,6 @@
 		DFA6A7C51BB3407D0052F7D7 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		DFA6A7C61BB3407D0052F7D7 /* TravelLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelLocation.swift; sourceTree = "<group>"; };
 		DFA6A7C91BB340950052F7D7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		DFA6A7CB1BB340950052F7D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		DFA6A7D11BB340C80052F7D7 /* AnnotationLocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationLocationView.xib; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				DFE34D411BB3362F00096025 /* AppDelegate.swift */,
-				DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */,
 				DFE34D501BB3362F00096025 /* Info.plist */,
 				DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */,
 				0F3EF24520481D9F00AB4B9C /* SearchVC.swift */,
@@ -330,7 +327,6 @@
 				DFA6A7D81BB340C90052F7D7 /* MapInteractor.swift in Sources */,
 				DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */,
 				DFA6A7CC1BB340950052F7D7 /* MapViewController.swift in Sources */,
-				DFA6A7CD1BB340950052F7D7 /* AddLocationViewController.swift in Sources */,
 				0FACA0951FE5EA5300522539 /* StraxRealm.swift in Sources */,
 				0FACA08B1FE5E03900522539 /* SearchLocationResponseModel.swift in Sources */,
 				0F94EDB61DF6298200EAF27B /* TripRouteViewModel.swift in Sources */,

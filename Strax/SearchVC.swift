@@ -8,27 +8,31 @@
 
 import UIKit
 
-class SearchVC: UIViewController {
+class SearchVC: UIViewController, UISearchBarDelegate {
     
     var searchResults = [Location]() {
         didSet {
             tableView.reloadData()
+            loader.stopAnimating()
         }
     }
-    var searchController: UISearchController!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var loader: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.becomeFirstResponder()
     }
-}
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchResults.removeAll()
+    }
 
-extension SearchVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text, !searchText.isEmpty {
+            searchBar.resignFirstResponder()
+            loader.startAnimating()
             search(searchText)
         }
     }
@@ -45,10 +49,6 @@ extension SearchVC: UISearchBarDelegate {
             case .success(let locationModel):
                 let locations = Location.createFromResponse(data: locationModel)
                 self.searchResults = locations
-
-//                aLocation.save()
-//                self.dismiss(animated: true, completion: nil)
-
             case .failure(let error):
                 print(error)
             }
