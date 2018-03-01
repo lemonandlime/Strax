@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3EF24620481D9F00AB4B9C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3EF24520481D9F00AB4B9C /* SearchVC.swift */; };
 		0F8F08351DF61D1A00307C02 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */; };
 		0F8F08361DF61D1A00307C02 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF7FC471DF60E8C00E1E4E7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0F94EDB61DF6298200EAF27B /* TripRouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94EDB41DF6298200EAF27B /* TripRouteViewModel.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F3EF24520481D9F00AB4B9C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		0F94EDB41DF6298200EAF27B /* TripRouteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripRouteViewModel.swift; sourceTree = "<group>"; };
 		0F94EDB51DF6298200EAF27B /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		0FACA08A1FE5E03900522539 /* SearchLocationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationResponseModel.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				DFA6A7CA1BB340950052F7D7 /* AddLocationViewController.swift */,
 				DFE34D501BB3362F00096025 /* Info.plist */,
 				DFA6A7CF1BB340A10052F7D7 /* LaunchScreen.xib */,
+				0F3EF24520481D9F00AB4B9C /* SearchVC.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				4548EAB31BB49D7000A15921 /* Annotation.swift in Sources */,
 				DFE34D421BB3362F00096025 /* AppDelegate.swift in Sources */,
 				DFA6A7C31BB3405C0052F7D7 /* Location.swift in Sources */,
+				0F3EF24620481D9F00AB4B9C /* SearchVC.swift in Sources */,
 				DFA6A7D61BB340C90052F7D7 /* LineView.swift in Sources */,
 				DFA6A7D81BB340C90052F7D7 /* MapInteractor.swift in Sources */,
 				DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */,

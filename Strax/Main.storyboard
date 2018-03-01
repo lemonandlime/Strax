@@ -104,6 +104,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6X8-fw-N61">
                                 <rect key="frame" x="287" y="20" width="72" height="72"/>
                                 <state key="normal" image="Search Point"/>
+                                <connections>
+                                    <segue destination="VLX-oG-mD8" kind="presentation" id="dvb-Pr-VOX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79C-M1-6o1">
                                 <rect key="frame" x="287" y="595" width="72" height="72"/>
@@ -130,6 +133,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riP-Gq-AfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="127.2" y="-7.6461769115442282"/>
+        </scene>
+        <!--SearchVC-->
+        <scene sceneID="iDx-35-sct">
+            <objects>
+                <viewController id="VLX-oG-mD8" customClass="SearchVC" customModule="Strax" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w30-oA-g0s"/>
+                        <viewControllerLayoutGuide type="bottom" id="uG1-xR-Ab4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N6r-ml-3jb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ntK-A5-nXm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VLX-oG-mD8" id="4db-TG-yBH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uG1-xR-Ab4" firstAttribute="top" secondItem="ntK-A5-nXm" secondAttribute="bottom" id="3db-No-5pB"/>
+                            <constraint firstAttribute="trailing" secondItem="ntK-A5-nXm" secondAttribute="trailing" id="3wG-tJ-1F8"/>
+                            <constraint firstItem="ntK-A5-nXm" firstAttribute="top" secondItem="w30-oA-g0s" secondAttribute="bottom" id="9Ts-qe-5qX"/>
+                            <constraint firstItem="ntK-A5-nXm" firstAttribute="leading" secondItem="N6r-ml-3jb" secondAttribute="leading" id="c0N-mI-jAZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ntK-A5-nXm" id="a9I-Lg-zwv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILK-AO-CkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="894" y="-806"/>
         </scene>
         <!--Trip View Controller-->
         <scene sceneID="wnh-pe-OIS">
