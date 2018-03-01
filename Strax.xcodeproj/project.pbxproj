@@ -27,6 +27,7 @@
 		4525B97C1BC1625100FC03DC /* AnnotationClusterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */; };
 		4548EAB31BB49D7000A15921 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548EAB21BB49D7000A15921 /* Annotation.swift */; };
 		45CCAE171BC19E10003039F8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CCAE161BC19E10003039F8 /* MapKit.framework */; };
+		B9844FA1470FA2343792C6E9 /* Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984486C5DD6D83831C1FAF9 /* Substring.swift */; };
 		DFA6A7BD1BB340300052F7D7 /* SLDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */; };
 		DFA6A7C31BB3405C0052F7D7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C21BB3405C0052F7D7 /* Location.swift */; };
 		DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C51BB3407D0052F7D7 /* Trip.swift */; };
@@ -74,6 +75,7 @@
 		4525B97B1BC1625100FC03DC /* AnnotationClusterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationClusterView.xib; sourceTree = "<group>"; };
 		4548EAB21BB49D7000A15921 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		45CCAE161BC19E10003039F8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B984486C5DD6D83831C1FAF9 /* Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Substring.swift; sourceTree = "<group>"; };
 		DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDataProvider.swift; sourceTree = "<group>"; };
 		DFA6A7C21BB3405C0052F7D7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DFA6A7C51BB3407D0052F7D7 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B98440184F647E8B97A0F948 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B984486C5DD6D83831C1FAF9 /* Substring.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		DFA6A7C41BB340710052F7D7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +238,7 @@
 				0F94EDB31DF6295A00EAF27B /* Detail */,
 				DFA6A7D91BB340CE0052F7D7 /* Map */,
 				45CCAE1B1BC1A4A5003039F8 /* Supporting Files */,
+				B98440184F647E8B97A0F948 /* extensions */,
 			);
 			path = Strax;
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 				0FACA08B1FE5E03900522539 /* SearchLocationResponseModel.swift in Sources */,
 				0F94EDB61DF6298200EAF27B /* TripRouteViewModel.swift in Sources */,
 				DFA6A7C81BB3407D0052F7D7 /* TravelLocation.swift in Sources */,
+				B9844FA1470FA2343792C6E9 /* Substring.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -66,6 +66,7 @@ extension SearchVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = searchResults[indexPath.row].name
+        cell.detailTextLabel?.text = searchResults[indexPath.row].city
         return cell
     }
 
