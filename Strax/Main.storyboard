@@ -35,11 +35,24 @@
                                 <rect key="frame" x="303" y="595" width="72" height="72"/>
                                 <state key="normal" image="Menu Point"/>
                             </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="R3r-pY-bMM">
+                                <rect key="frame" x="132.5" y="595" width="110" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Hitta resa" backgroundImage="Menu Point">
+                                    <color key="titleColor" name="dark-midnight-blue"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFindTravelButtonClicked" destination="kDE-qU-LM4" eventType="touchUpInside" id="k2D-6m-ysU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6X8-fw-N61" secondAttribute="trailing" id="2uZ-hc-D0S"/>
                             <constraint firstItem="dtM-oI-poj" firstAttribute="top" secondItem="Su1-Vu-ui5" secondAttribute="bottom" id="6Jz-SL-GnJ"/>
+                            <constraint firstItem="R3r-pY-bMM" firstAttribute="centerX" secondItem="Su1-Vu-ui5" secondAttribute="centerX" id="7Hz-Fn-PXY"/>
+                            <constraint firstItem="dtM-oI-poj" firstAttribute="top" secondItem="R3r-pY-bMM" secondAttribute="bottom" id="9s4-p2-zcM"/>
                             <constraint firstItem="6X8-fw-N61" firstAttribute="top" secondItem="oe6-Vi-65Y" secondAttribute="bottom" id="ImY-CE-kPx"/>
                             <constraint firstItem="Su1-Vu-ui5" firstAttribute="top" secondItem="1kN-Ni-hWT" secondAttribute="top" id="Jed-c0-vei"/>
                             <constraint firstItem="Su1-Vu-ui5" firstAttribute="leading" secondItem="1kN-Ni-hWT" secondAttribute="leading" id="KGX-DR-lfw"/>
@@ -49,6 +62,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="calculateTripButton" destination="R3r-pY-bMM" id="MQa-U6-PzW"/>
                         <outlet property="mapView" destination="Su1-Vu-ui5" id="A38-V0-wor"/>
                         <segue destination="27j-sJ-Ahf" kind="presentation" identifier="Trip Details" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="gzc-F6-xL8"/>
                     </connections>
@@ -316,6 +330,9 @@
     <resources>
         <image name="Menu Point" width="72" height="72"/>
         <image name="Search Point" width="72" height="72"/>
+        <namedColor name="dark-midnight-blue">
+            <color red="0.16500000655651093" green="0.37599998712539673" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="polar">
             <color red="0.90600001811981201" green="0.98000001907348633" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
