@@ -16,7 +16,11 @@ protocol BaseLocation {
     var lat: Double { get }
 }
 
-struct TravelLocation: BaseLocation {
+extension BaseLocation {
+
+}
+
+struct TravelLocation: BaseLocation, Codable {
 
     enum CodingKeys: String, CodingKey {
         case name
@@ -24,12 +28,12 @@ struct TravelLocation: BaseLocation {
         case id
         case lon
         case lat
-        case date
-        case time
+        case timeString = "time"
+        case dateString = "date"
     }
 
-    var name: String = "Kalle"
-    var type: String = "Kalle"
+    let name: String
+    let type: String
     let id: String
     let lon: Double
     let lat: Double
@@ -39,7 +43,6 @@ struct TravelLocation: BaseLocation {
     var date: Date {
         return TravelLocation.dateFrom(dateString, timeString: timeString)
     }
-
     fileprivate static func dateFrom(_ dateString: String, timeString: String) -> Date! {
         let timeFormatter = DateFormatter()
         let dateFormatter = DateFormatter()
@@ -52,34 +55,34 @@ struct TravelLocation: BaseLocation {
     }
 }
 
-
-extension TravelLocation: Encodable {
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(name, forKey: .name)
-        try container.encode(type, forKey: .type)
-        try container.encode(id, forKey: .id)
-        try container.encode(lon.description, forKey: .lon)
-        try container.encode(lat.description, forKey: .lat)
-    }
-}
-
-extension TravelLocation: Decodable {
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        name = try container.decode(String.self, forKey: .name)
-        type = try container.decode(String.self, forKey: .type)
-        id = try container.decode(String.self, forKey: .id)
-
-        let latString = try container.decode(String.self, forKey: .lat)
-        let lonString = try container.decode(String.self, forKey: .lon)
-        lat = Double(latString)!
-        lon = Double(lonString)!
-
-        dateString = try container.decode(String.self, forKey: .date)
-        timeString = try container.decode(String.self, forKey: .time)
-    }
-}
+//
+//extension TravelLocation: Encodable {
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(name, forKey: .name)
+//        try container.encode(type, forKey: .type)
+//        try container.encode(id, forKey: .id)
+//        try container.encode(lon.description, forKey: .lon)
+//        try container.encode(lat.description, forKey: .lat)
+//    }
+//}
+//
+//extension TravelLocation: Decodable {
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        name = try container.decode(String.self, forKey: .name)
+//        type = try container.decode(String.self, forKey: .type)
+//        id = try container.decode(String.self, forKey: .id)
+//
+//        let latString = try container.decode(String.self, forKey: .lat)
+//        let lonString = try container.decode(String.self, forKey: .lon)
+//        lat = Double(latString)!
+//        lon = Double(lonString)!
+//
+//        dateString = try container.decode(String.self, forKey: .date)
+//        timeString = try container.decode(String.self, forKey: .time)
+//    }
+//}
 
 
 //init(info: Dictionary<String, String>) {

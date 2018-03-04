@@ -9,11 +9,9 @@
 import UIKit
 
 struct Trip: Codable {
-    let duration: String
     var legs: Array<Leg> = Array<Leg>()
 
     enum CodingKeys: String, CodingKey {
-        case duration = "dur"
         case legList = "LegList"
     }
 
@@ -21,13 +19,11 @@ struct Trip: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         let legList = try values.decode(LegList.self, forKey: .legList)
         legs = legList.legs
-        duration = try values.decode(String.self, forKey: .duration)
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(LegList(legs: legs) as LegList, forKey: .legList)
-        try container.encode(duration, forKey: .duration)
     }
 
 //    init(info: Data) {
@@ -53,7 +49,7 @@ struct Trip: Codable {
 //    }
 }
 
-private struct LegList {
+private struct LegList: Codable {
 
     enum CodingKeys: String, CodingKey {
         case legs =  "Leg"
@@ -66,25 +62,26 @@ private struct LegList {
     }
 }
 
-extension LegList: Encodable {
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(legs, forKey: .legs)
-    }
-}
-
-extension LegList: Decodable {
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        do {
-            legs = try container.decode(Array<Leg>.self, forKey: .legs)
-        } catch {
-            let singleLeg = try container.decode(Leg.self, forKey: .legs)
-            legs = [singleLeg]
-        }
-    }
-}
+//extension LegList: Encodable {
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(legs, forKey: .legs)
+//    }
+//}
+//
+//extension LegList: Decodable {
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        legs = try container.decode(Array<Leg>.self, forKey: .legs)
+//
+////        do {
+////            legs = try container.decode(Array<Leg>.self, forKey: .legs)
+////        } catch {
+////            let singleLeg = try container.decode(Leg.self, forKey: .legs)
+////            legs = [singleLeg]
+////        }
+//    }
+//}
 
 
 

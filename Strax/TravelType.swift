@@ -7,29 +7,22 @@ import Foundation
 
 enum TravelType: String, Codable {
 
-    case UNKNOWN
-    case METRO
-    case BUS
-    case TRAIN
-    case TRAM
-    case WALK
+    case publicTransport = "JNY"
+    case parkAndRide = "PARK"
+    case car = "KISS"
+    case bike = "BIKE"
+    case transfer = "TRSF"
+    case walk = "WALK"
+    case taxi = "TAXI"
 
     func name() -> String {
         switch self {
-        case .UNKNOWN: return ""
-        case .METRO: return "Tunnelbana"
-        case .BUS: return "Buss"
-        case .TRAIN: return "Tåg"
-        case .TRAM: return "Spårvagn"
-        case .WALK: return "Promenad"
-        }
-    }
-
-    func verb() -> String {
-        switch self {
-        case .UNKNOWN: return ""
-        case .METRO, .BUS, .TRAIN, .TRAM: return "åk"
-        case .WALK: return "gå"
+        case .publicTransport: return "Kollektivtrafik"
+        case .car: return "Bil"
+        case .bike: return "Cykel"
+        case .taxi: return "Taxi"
+        case .walk: return "Promenad"
+        default: return ""
         }
     }
 }
