@@ -8,91 +8,27 @@
 
 import UIKit
 
-enum TravelType: String {
-
-    case UNKNOWN
-    case METRO
-    case BUS
-    case TRAIN
-    case TRAM
-
-    case WALK
-
-    func name() -> String {
-        switch self {
-        case .UNKNOWN: return ""
-        case .METRO: return "Tunnelbana"
-        case .BUS: return "Buss"
-        case .TRAIN: return "Tåg"
-        case .TRAM: return "Spårvagn"
-        case .WALK: return "Promenad"
-        }
-    }
-
-    func verb() -> String {
-        switch self {
-        case .UNKNOWN: return ""
-        case .METRO, .BUS, .TRAIN, .TRAM: return "åk"
-        case .WALK: return "gå"
-        }
-    }
-}
-
-protocol BaseLeg {
-    var name: String { get }
-    var type: TravelType { get }
-    var direction: String? { get }
-    var line: String? { get }
-    var hide: Bool { get }
-    var distance: String? { get }
-    var origin: TravelLocation { get }
-    var destination: TravelLocation { get }
-    var JourneyDetailRef: String? { get }
-    var GeometryRef: String { get }
-}
-
-struct Leg: BaseLeg {
-    let name: String
-    let type: TravelType
-    let direction: String?
-    let line: String?
-    let hide: Bool
-    let distance: String?
-    let origin: TravelLocation
-    let destination: TravelLocation
-    let JourneyDetailRef: String?
-    let GeometryRef: String
-
-    init(info: Dictionary<String, Any>) {
-        name = info["name"] as! String
-        type = TravelType(rawValue: info["type"] as! String)!
-        direction = info["dir"] as? String
-        line = info["line"] as? String
-        hide = info["hide"] as? String == "true"
-        distance = info["dist"] as? String
-        origin = TravelLocation(info: info["Origin"] as! Dictionary<String, String>)
-        destination = TravelLocation(info: info["Destination"] as! Dictionary<String, String>)
-        GeometryRef = (info["GeometryRef"] as! Dictionary<String, String>)["ref"]!
-
-        if let journeyDetail = info["JourneyDetailRef"] as? Dictionary<String, String> {
-            JourneyDetailRef = journeyDetail["ref"]
-        } else {
-            JourneyDetailRef = nil
-        }
-    }
-}
-
-protocol BaseTrip {
-    var duration: String { get }
-    var numberOfChanges: String { get }
-    var legs: Array<BaseLeg> { get }
-}
-
-struct Trip: BaseTrip, Codable {
-
+struct Trip: Codable {
     let duration: String
-    let numberOfChanges: String
-    var legs: Array<BaseLeg> = Array<BaseLeg>()
+    var legs: Array<Leg> = Array<Leg>()
+
+    enum CodingKeys: String, CodingKey {
+        case duration = "dur"
+        case legList = "LegList"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let legList = try values.decode(LegList.self, forKey: .legList)
+        legs = legList.legs
+        duration = try values.decode(String.self, forKey: .duration)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(LegList(legs: legs) as LegList, forKey: .legList)
+        try container.encode(duration, forKey: .duration)
+    }
 
 //    init(info: Data) {
 //        let decoder = JSONDecoder()
@@ -115,13 +51,79 @@ struct Trip: BaseTrip, Codable {
 //        duration = info["dur"].stringValue
 //        numberOfChanges = info["chg"].stringValue
 //    }
-    
-    public init(from decoder: Decoder) throws {
-        throw(NSError())
-    }
-    public func encode(to encoder: Encoder) throws {
-        
+}
+
+private struct LegList {
+
+    enum CodingKeys: String, CodingKey {
+        case legs =  "Leg"
     }
 
-    
+    let legs: [Leg]
+
+    init(legs: [Leg]) {
+        self.legs = legs
+    }
 }
+
+extension LegList: Encodable {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(legs, forKey: .legs)
+    }
+}
+
+extension LegList: Decodable {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        do {
+            legs = try container.decode(Array<Leg>.self, forKey: .legs)
+        } catch {
+            let singleLeg = try container.decode(Leg.self, forKey: .legs)
+            legs = [singleLeg]
+        }
+    }
+}
+
+
+
+//{
+//    "dur": "50",
+//    "chg": "1",
+//    "co2": "0.35",
+//    "LegList": {
+//    "Leg": [{
+//    "idx": "0",
+//    "name": "buss 194",
+//    "type": "BUS",
+//    "dir": "Stockholm C",
+//    "line": "194",
+//    "Origin": {
+//    "name": "Bagarmossen",
+//    "type": "ST",
+//    "id": "400113001",
+//    "lon": "18.133391",
+//    "lat": "59.276659",
+//    "routeIdx": "0",
+//    "time": "02:15",
+//    "date": "2018-03-02"
+//    },
+//    "Destination": {
+//    "name": "Centralen (Vasagatan)",
+//    "type": "ST",
+//    "id": "400111518",
+//    "lon": "18.057980",
+//    "lat": "59.332033",
+//    "routeIdx": "20",
+//    "time": "02:47",
+//    "date": "2018-03-02",
+//    "track": "B"
+//    },
+//    "JourneyDetailRef": {
+//    "ref": "ref%3D561102%2F201275%2F953870%2F289902%2F74%3Fdate%3D2018-03-02%26station_evaId%3D400113001%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+//    },
+//    "GeometryRef": {
+//    "ref": "ref%3D561102%2F201275%2F953870%2F289902%2F74%26startIdx%3D0%26endIdx%3D20%26lang%3Dsv%26format%3Djson%26"
+//}
+//}
