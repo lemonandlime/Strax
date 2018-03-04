@@ -11,7 +11,7 @@ import Alamofire
 
 private let _sharedInstance = SLDataProvider()
 private let baseUrl = "http://api.sl.se/api2/"
-private let key = "35ea4763c2cc4c47b9aaef634b728943"
+private let key = "41936f3484464fb199fdf1b02e963229"
 private let nameKey = "814ca053c1774eedaf6cfd61e2c7e886"
 class SLDataProvider: NSObject {
 
@@ -22,7 +22,7 @@ class SLDataProvider: NSObject {
     func getTrip(_ from: String, to: String, onCompletion: @escaping (Result<Array<Trip>>) -> Void) {
         let parameters = ["key": key, "originId": from, "destId": to]
 
-        let request = Alamofire.request(URL(string: baseUrl + "TravelplannerV2/trip.JSON")!, parameters: parameters)
+        let request = Alamofire.request(URL(string: baseUrl + "TravelplannerV3/trip.JSON")!, parameters: parameters)
 
         request.validate().responseData { response in
             switch response.result {

@@ -9,23 +9,21 @@ struct TripResponseModel: Decodable {
     let trips: [Trip]
 
     enum CodingKeys: String, CodingKey {
-        case TripList
+        case trips = "Trip"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        let tripList = try values.decode(TripsList.self, forKey: .TripList)
-        trips = tripList.trips
-
+        trips = try values.decode([Trip].self, forKey: .trips)
     }
 }
 
-private struct TripsList: Codable {
-    let trips: [Trip]
-    let noNamespaceSchemaLocation: String?
-
-    enum CodingKeys: String, CodingKey {
-        case trips = "Trip"
-        case noNamespaceSchemaLocation
-    }
-}
+//private struct TripsList: Codable {
+//    let trips: [Trip]
+//    let noNamespaceSchemaLocation: String?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case trips = "Trip"
+//        case noNamespaceSchemaLocation
+//    }
+//}
