@@ -76,7 +76,7 @@ extension LegList: Encodable {
 extension LegList: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-
+        
         do {
             legs = try container.decode(Array<Leg>.self, forKey: .legs)
         } catch {

@@ -24,7 +24,6 @@ struct TravelLocation: BaseLocation {
         case id
         case lon
         case lat
-        case routeIdx
         case date
         case time
     }
@@ -34,7 +33,6 @@ struct TravelLocation: BaseLocation {
     let id: String
     let lon: Double
     let lat: Double
-    let routeIdx: String?
     let dateString: String
     let timeString: String
 
@@ -72,7 +70,6 @@ extension TravelLocation: Decodable {
         name = try container.decode(String.self, forKey: .name)
         type = try container.decode(String.self, forKey: .type)
         id = try container.decode(String.self, forKey: .id)
-        routeIdx = try container.decode(String?.self, forKey: .routeIdx)
 
         let latString = try container.decode(String.self, forKey: .lat)
         let lonString = try container.decode(String.self, forKey: .lon)
