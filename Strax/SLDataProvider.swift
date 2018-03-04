@@ -26,13 +26,18 @@ class SLDataProvider: NSObject {
 
         request.validate().responseData { response in
             switch response.result {
-            case .success(let object):
+            case .success(let data):
+                do {
+                    let responseModel = try JSONDecoder().decode(TripResponseModel.self, from: data)
+                    onCompletion(Result.success(responseModel.trips))
+                } catch {
+                    onCompletion(Result.failure(error))
+                }
 //                let json = JSON(data: object)
-                var trips = Array<Trip>()
+//                var trips = Array<Trip>()
 //                json["TripList"]["Trip"].forEach({ (_, trip: JSON) in
 //                    trips.append(Trip(info: trip))
 //                })
-                onCompletion(Result.success(trips))
                 break
 
             case .failure(let error):
