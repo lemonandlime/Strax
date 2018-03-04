@@ -30,7 +30,6 @@
 		B98440CB0086E95A83323150 /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98449648357EAAA5645E865 /* Leg.swift */; };
 		B98442981C985025918C8028 /* StationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98441F3C7CE258E2D6176F7 /* StationAnnotation.swift */; };
 		B98447BF8F4C3ECF6841D0E9 /* TripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9844CCB10EDBD3871181367 /* TripResponseModel.swift */; };
-		B9844E8D562FFBCBFEA7BB9B /* TravelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9844E909489E30B4AD9AF5B /* TravelType.swift */; };
 		B9844EFAE282ED78D8E9AD5C /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9844DD21988CD10FDBF9A18 /* MKMapView.swift */; };
 		B9844FA1470FA2343792C6E9 /* Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984486C5DD6D83831C1FAF9 /* Substring.swift */; };
 		DFA6A7BD1BB340300052F7D7 /* SLDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */; };
@@ -85,7 +84,6 @@
 		B98449648357EAAA5645E865 /* Leg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		B9844CCB10EDBD3871181367 /* TripResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripResponseModel.swift; sourceTree = "<group>"; };
 		B9844DD21988CD10FDBF9A18 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
-		B9844E909489E30B4AD9AF5B /* TravelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelType.swift; sourceTree = "<group>"; };
 		DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDataProvider.swift; sourceTree = "<group>"; };
 		DFA6A7C21BB3405C0052F7D7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DFA6A7C51BB3407D0052F7D7 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 				DFA6A7C51BB3407D0052F7D7 /* Trip.swift */,
 				DFA6A7C61BB3407D0052F7D7 /* TravelLocation.swift */,
 				B98449648357EAAA5645E865 /* Leg.swift */,
-				B9844E909489E30B4AD9AF5B /* TravelType.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -362,7 +359,6 @@
 				B9844EFAE282ED78D8E9AD5C /* MKMapView.swift in Sources */,
 				B98447BF8F4C3ECF6841D0E9 /* TripResponseModel.swift in Sources */,
 				B98440CB0086E95A83323150 /* Leg.swift in Sources */,
-				B9844E8D562FFBCBFEA7BB9B /* TravelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

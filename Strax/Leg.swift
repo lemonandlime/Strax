@@ -5,44 +5,81 @@
 
 import Foundation
 
-struct Leg: Codable {
-    var name: String
-    let type: TravelType
+struct Leg {
+    let name: String
+    let type: Type
+    let number: String?
+    var category: Category
     let direction: String?
     let line: String?
     let distance: String?
     let origin: TravelLocation
     let destination: TravelLocation
-    let journeyDetailRef: String?
-    let geometryRef: String?
 
     enum CodingKeys: String, CodingKey {
         case name
         case type
+        case number
+        case category
         case direction = "dir"
         case line
         case distance
         case origin = "Origin"
         case destination = "Destination"
-        case journeyDetailRef = "JourneyDetailRef.ref"
-        case geometryRef = "GeometryRef.ref"
-
     }
-//    init(info: Dictionary<String, Any>) {
-//        name = info["name"] as! String
-//        type = TravelType.swift(rawValue: info["type"] as! String)!
-//        direction = info["dir"] as? String
-//        line = info["line"] as? String
-//        hide = info["hide"] as? String == "true"
-//        distance = info["dist"] as? String
-//        origin = TravelLocation(info: info["Origin"] as! Dictionary<String, String>)
-//        destination = TravelLocation(info: info["Destination"] as! Dictionary<String, String>)
-//        GeometryRef = (info["GeometryRef"] as! Dictionary<String, String>)["ref"]!
-//
-//        if let journeyDetail = info["JourneyDetailRef"] as? Dictionary<String, String> {
-//            JourneyDetailRef = journeyDetail["ref"]
-//        } else {
-//            JourneyDetailRef = nil
-//        }
-//    }
+
+    enum `Type`: String, Codable {
+        case publicTransport = "JNY"
+        case parkAndRide = "PARK"
+        case car = "KISS"
+        case bike = "BIKE"
+        case transfer = "TRSF"
+        case walk = "WALK"
+        case taxi = "TAXI"
+
+        func name() -> String {
+            switch self {
+            case .publicTransport: return "Kollektivtrafik"
+            case .car: return "Bil"
+            case .bike: return "Cykel"
+            case .taxi: return "Taxi"
+            case .walk: return "Promenad"
+            default: return ""
+            }
+        }
+    }
+
+    enum Category: String, Codable {
+        case bus = "BUS"
+        case subway = "MET"
+        case train = "TRN"
+        case walk
+    }
+}
+
+extension Leg: Decodable, Encodable {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        type = try container.decode(Type.self, forKey: .type)
+        number = try container.decodeIfPresent(String.self, forKey: .number)
+        category = try container.decodeIfPresent(Category.self, forKey: .category) ?? .walk
+        direction = try container.decodeIfPresent(String.self, forKey: .direction)
+        line = try container.decodeIfPresent(String.self, forKey: .line)
+        distance = try container.decodeIfPresent(String.self, forKey: .distance)
+        origin = try container.decode(TravelLocation.self, forKey: .origin)
+        destination = try container.decode(TravelLocation.self, forKey: .destination)
+    }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(type, forKey: .type)
+        try container.encodeIfPresent(number, forKey: .number)
+        try container.encodeIfPresent(category, forKey: .category)
+        try container.encodeIfPresent(direction, forKey: .direction)
+        try container.encodeIfPresent(line, forKey: .line)
+        try container.encodeIfPresent(distance, forKey: .distance)
+        try container.encode(origin, forKey: .origin)
+        try container.encode(destination, forKey: .destination)
+    }
 }
