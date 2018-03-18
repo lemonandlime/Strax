@@ -42,7 +42,6 @@
 		DFA6A7D51BB340C90052F7D7 /* AnnotationLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA6A7D11BB340C80052F7D7 /* AnnotationLocationView.xib */; };
 		DFA6A7D61BB340C90052F7D7 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D21BB340C90052F7D7 /* LineView.swift */; };
 		DFA6A7D71BB340C90052F7D7 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */; };
-		DFA6A7D81BB340C90052F7D7 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */; };
 		DFE34D421BB3362F00096025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE34D411BB3362F00096025 /* AppDelegate.swift */; };
 		DFE34D4C1BB3362F00096025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE34D4B1BB3362F00096025 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -94,7 +93,6 @@
 		DFA6A7D11BB340C80052F7D7 /* AnnotationLocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationLocationView.xib; sourceTree = "<group>"; };
 		DFA6A7D21BB340C90052F7D7 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		DFA6A7D31BB340C90052F7D7 /* AnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
-		DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		DFE34D3E1BB3362F00096025 /* Strax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Strax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE34D411BB3362F00096025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE34D4B1BB3362F00096025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				DFA6A7C91BB340950052F7D7 /* MapVC.swift */,
 				45CCAE181BC1A3E2003039F8 /* Annotation */,
 				DFA6A7D21BB340C90052F7D7 /* LineView.swift */,
-				DFA6A7D41BB340C90052F7D7 /* MapInteractor.swift */,
 				4548EAB21BB49D7000A15921 /* Annotation.swift */,
 			);
 			name = Map;
@@ -347,7 +344,6 @@
 				DFA6A7C31BB3405C0052F7D7 /* Location.swift in Sources */,
 				0F3EF24620481D9F00AB4B9C /* SearchVC.swift in Sources */,
 				DFA6A7D61BB340C90052F7D7 /* LineView.swift in Sources */,
-				DFA6A7D81BB340C90052F7D7 /* MapInteractor.swift in Sources */,
 				DFA6A7C71BB3407D0052F7D7 /* Trip.swift in Sources */,
 				DFA6A7CC1BB340950052F7D7 /* MapVC.swift in Sources */,
 				0FACA0951FE5EA5300522539 /* StraxRealm.swift in Sources */,

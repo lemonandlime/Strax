@@ -62,26 +62,7 @@ private struct LegList: Codable {
     }
 }
 
-//extension LegList: Encodable {
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(legs, forKey: .legs)
-//    }
-//}
-//
-//extension LegList: Decodable {
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        legs = try container.decode(Array<Leg>.self, forKey: .legs)
-//
-////        do {
-////            legs = try container.decode(Array<Leg>.self, forKey: .legs)
-////        } catch {
-////            let singleLeg = try container.decode(Leg.self, forKey: .legs)
-////            legs = [singleLeg]
-////        }
-//    }
-//}
+
 
 
 

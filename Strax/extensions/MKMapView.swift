@@ -11,6 +11,10 @@ private let defaultInset = UIEdgeInsets(top: 100, left: 40, bottom: 100, right: 
 
 extension MKMapView {
 
+    var isZoomedIn: Bool {
+        return annotations.count != annotations(in: visibleMapRect).count
+    }
+
     func zoomToAnnotations(_ annotations: [MKAnnotation]? = nil, inset: UIEdgeInsets = defaultInset) {
         let newMapRect = mapRect(for: annotations ?? self.annotations)
         if !MKMapRectIsNull(newMapRect) {
