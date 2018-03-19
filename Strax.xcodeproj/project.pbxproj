@@ -28,9 +28,12 @@
 		4548EAB31BB49D7000A15921 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548EAB21BB49D7000A15921 /* Annotation.swift */; };
 		45CCAE171BC19E10003039F8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CCAE161BC19E10003039F8 /* MapKit.framework */; };
 		B98440CB0086E95A83323150 /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98449648357EAAA5645E865 /* Leg.swift */; };
+		B98440CE1BAA876AC121580D /* CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9844882621DD4C403126597 /* CLLocation.swift */; };
+		B984428B623800F1547E8A34 /* MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9844F1982D419AEA146693B /* MKAnnotation.swift */; };
 		B98442981C985025918C8028 /* StationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98441F3C7CE258E2D6176F7 /* StationAnnotation.swift */; };
 		B98447BF8F4C3ECF6841D0E9 /* TripResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9844CCB10EDBD3871181367 /* TripResponseModel.swift */; };
 		B9844EFAE282ED78D8E9AD5C /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9844DD21988CD10FDBF9A18 /* MKMapView.swift */; };
+		B9844F01E5612D32284CD376 /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9844E73959C8DBEC111AA51 /* LocationDetailsView.swift */; };
 		B9844FA1470FA2343792C6E9 /* Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984486C5DD6D83831C1FAF9 /* Substring.swift */; };
 		DFA6A7BD1BB340300052F7D7 /* SLDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */; };
 		DFA6A7C31BB3405C0052F7D7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA6A7C21BB3405C0052F7D7 /* Location.swift */; };
@@ -80,9 +83,12 @@
 		45CCAE161BC19E10003039F8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B98441F3C7CE258E2D6176F7 /* StationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationAnnotation.swift; sourceTree = "<group>"; };
 		B984486C5DD6D83831C1FAF9 /* Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Substring.swift; sourceTree = "<group>"; };
+		B9844882621DD4C403126597 /* CLLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocation.swift; sourceTree = "<group>"; };
 		B98449648357EAAA5645E865 /* Leg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		B9844CCB10EDBD3871181367 /* TripResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripResponseModel.swift; sourceTree = "<group>"; };
 		B9844DD21988CD10FDBF9A18 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
+		B9844E73959C8DBEC111AA51 /* LocationDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
+		B9844F1982D419AEA146693B /* MKAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKAnnotation.swift; sourceTree = "<group>"; };
 		DFA6A7BC1BB340300052F7D7 /* SLDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDataProvider.swift; sourceTree = "<group>"; };
 		DFA6A7C21BB3405C0052F7D7 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DFA6A7C51BB3407D0052F7D7 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -174,6 +180,8 @@
 			children = (
 				B984486C5DD6D83831C1FAF9 /* Substring.swift */,
 				B9844DD21988CD10FDBF9A18 /* MKMapView.swift */,
+				B9844882621DD4C403126597 /* CLLocation.swift */,
+				B9844F1982D419AEA146693B /* MKAnnotation.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 				45CCAE181BC1A3E2003039F8 /* Annotation */,
 				DFA6A7D21BB340C90052F7D7 /* LineView.swift */,
 				4548EAB21BB49D7000A15921 /* Annotation.swift */,
+				B9844E73959C8DBEC111AA51 /* LocationDetailsView.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -355,6 +364,9 @@
 				B9844EFAE282ED78D8E9AD5C /* MKMapView.swift in Sources */,
 				B98447BF8F4C3ECF6841D0E9 /* TripResponseModel.swift in Sources */,
 				B98440CB0086E95A83323150 /* Leg.swift in Sources */,
+				B98440CE1BAA876AC121580D /* CLLocation.swift in Sources */,
+				B984428B623800F1547E8A34 /* MKAnnotation.swift in Sources */,
+				B9844F01E5612D32284CD376 /* LocationDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

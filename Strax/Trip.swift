@@ -25,34 +25,21 @@ struct Trip: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(LegList(legs: legs) as LegList, forKey: .legList)
     }
+}
 
-//    init(info: Data) {
-//        let decoder = JSONDecoder()
-//        let beer = try! decoder.decode(Trip.self, from: info)
-//        switch info["LegList"]["Leg"].type {
-//        case .array:
-//            let legList = info["LegList"]["Leg"]
-//            for i in 0 ..< legList.count {
-//                let newLeg = Leg(info: legList[i].dictionaryObject!)
-//                legs.append(newLeg)
-//            }
-//
-//        case .dictionary:
-//            legs.append(Leg(info: info["LegList"]["Leg"].dictionaryObject!))
-//
-//        default:
-//            legs = Array<BaseLeg>()
-//        }
-//
-//        duration = info["dur"].stringValue
-//        numberOfChanges = info["chg"].stringValue
-//    }
+extension Trip {
+    func departureTime() -> Date? {
+        return legs.first?.origin.date
+    }
+    func arrivalTime() -> Date? {
+        return legs.last?.destination.date
+    }
 }
 
 private struct LegList: Codable {
 
     enum CodingKeys: String, CodingKey {
-        case legs =  "Leg"
+        case legs = "Leg"
     }
 
     let legs: [Leg]
@@ -61,9 +48,6 @@ private struct LegList: Codable {
         self.legs = legs
     }
 }
-
-
-
 
 
 //{

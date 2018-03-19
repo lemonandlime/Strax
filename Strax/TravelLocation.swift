@@ -46,7 +46,7 @@ struct TravelLocation: BaseLocation, Codable {
     fileprivate static func dateFrom(_ dateString: String, timeString: String) -> Date! {
         let timeFormatter = DateFormatter()
         let dateFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm"
+        timeFormatter.dateFormat = "HH:mm:ss"
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let timeDate = timeFormatter.date(from: timeString)
         let dateDate = dateFormatter.date(from: dateString)
